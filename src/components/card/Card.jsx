@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Teams = () => {
+const Card = () => {
   return (
     <div>
-      npm
+      card
     </div>
   )
 }
 
-export default Teams
+export default Card

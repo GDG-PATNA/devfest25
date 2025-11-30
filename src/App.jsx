@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 // import About from "./components/About";
 // import Speaker from "./components/Speaker";
 // import Sponsers from "./components/Sponsers";
-// import Team from "./components/Team";
+import Team from "./components/Teams";
 // import Faq from "./components/Faq";
 // import Footer from "./components/Footer";
 // import Partners from "./components/Partners";
@@ -21,7 +21,7 @@ const Placeholder = ({ name, id }) => (
 const About = () => <Placeholder name="Why DevFest" id="why-DevFest" />;
 const Speaker = () => <Placeholder name="Speakers" id="speakers" />;
 const Sponsers = () => <Placeholder name="Sponsors" id="sponsors" />;
-const Team = () => <Placeholder name="Team" id="team" />;
+// const Team = () => <Placeholder name="Team" id="team" />;
 const Faq = () => <Placeholder name="FAQ" id="faq" />;
 const Footer = () => <div className="bg-black text-white p-10 text-center">Footer Content</div>;
 const Partners = () => <Placeholder name="Partners Page" />;
