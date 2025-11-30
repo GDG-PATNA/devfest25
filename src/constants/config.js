@@ -10,7 +10,7 @@ export const EVENT_CONFIG = {
     title: "DevFest",
     city: "Patna",
     year: "'25",
-    date: "December 20, 2025",
+    date: "December 27, 2025",
     description: "DevFest Patna 2025 is an annual developer conference by Google Developer Groups, bringing technology closer to everyone through lightning talks, expert sessions, and hands-on workshops.",
   },
 

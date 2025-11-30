@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-// import About from "./components/About";
+import About from "./components/about/About";
 // import Speaker from "./components/Speaker";
 // import Sponsers from "./components/Sponsers";
 // import Team from "./components/Team";
@@ -18,7 +18,7 @@ const Placeholder = ({ name, id }) => (
         <h2 className="text-4xl font-bold text-gray-300">{name} Section</h2>
     </div>
 );
-const About = () => <Placeholder name="Why DevFest" id="why-DevFest" />;
+//const About = () => <Placeholder name="Why DevFest" id="why-DevFest" />;
 const Speaker = () => <Placeholder name="Speakers" id="speakers" />;
 const Sponsers = () => <Placeholder name="Sponsors" id="sponsors" />;
 const Team = () => <Placeholder name="Team" id="team" />;

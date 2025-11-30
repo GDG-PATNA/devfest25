@@ -35,8 +35,8 @@ export default function Nav() {
         <div className="flex items-center ml-6  ">
           <img
             src={devfestImg}
-            alt="DevFest Patna 2024"
-            className="w-[60%]  inline-block"
+            alt="DevFest Patna 2025"
+            className="w-[80%]  inline-block"
           />
         </div>
         <ul className="hidden lg:flex justify-evenly ">
@@ -50,12 +50,13 @@ export default function Nav() {
                 }}
                 to={item.url}
                 smooth
-                className={`min-w-full  whitespace-nowrap text-base ${
-                  id === 0 ? "bg-primary text-white" : ""
-                } px-4 py-[6px] rounded-full hover:bg-secondary hover:text-white`}
+                className={`min-w-full whitespace-nowrap text-base font-semibold 
+                  px-4 py-[6px] rounded-full hover:bg-blue-600 hover:text-white transition-all duration-200`}
+
               >
                 {item.title}
               </Link>
+
             </li>
           ))}
         </ul>
@@ -70,14 +71,12 @@ export default function Nav() {
             className="animate-bounce w-12 text-black"
           />
           <div
-            className={`fixed right-1 top-[3rem] p-2 rounded bg-[rgba(0,0,0,0.6)] backdrop-blur-[4px] z-50 ${
-              toggle ? "hidden" : "flex"
-            }`}
+            className={`fixed right-1 top-[3rem] p-2 rounded bg-[rgba(0,0,0,0.6)] backdrop-blur-[4px] z-50 ${toggle ? "hidden" : "flex"
+              }`}
           >
             <ul
-              className={`list-none relative ${
-                toggle ? "hidden" : "flex"
-              } flex flex-col justify-center item-end`}
+              className={`list-none relative ${toggle ? "hidden" : "flex"
+                } flex flex-col justify-center item-end`}
             >
               {Menu.map((item, id) => (
                 <li className="mx-1 my-2" key={id}>
@@ -89,12 +88,13 @@ export default function Nav() {
                     }}
                     to={item.url}
                     smooth
-                    className={`min-w-full text-white whitespace-nowrap ${
-                      id === 0 ? "bg-primary" : ""
-                    } px-4 py-2 rounded-full hover:bg-secondary`}
+                    className={`min-w-full whitespace-nowrap font-semibold text-white
+                    px-4 py-2 rounded-full hover:bg-blue-600 transition-all duration-200`}
+
                   >
                     {item.title}
                   </Link>
+
                 </li>
               ))}
             </ul>

@@ -3,20 +3,28 @@
    FILE: ./components/Hero.jsx
    ========================================================================= */
 import { EVENT_CONFIG } from '../constants/config';
-import { Calendar } from "lucide-react"; 
+import { Calendar } from "lucide-react";
 import skyline from "../assets/skyline.png"
 import wheelInner from "../assets/wheelin.svg"
 import wheelOuter from "../assets/wheelout.svg"
 
 const Skyline = () => (
-  <div className="relative w-full h-64 sm:h-80 md:h-[500px] z-0 pointer-events-none mt-auto">
-    <img 
-      src={skyline} 
-      alt={`${EVENT_CONFIG.text.city} Skyline`} 
-      className="w-full h-full object-cover object-bottom opacity-90"
-    />
+  <div className="relative w-full h-64 sm:h-80 md:h-[500px] z-0 pointer-events-none mt-auto overflow-hidden">
+    <div className="skyline-scroll flex w-[200%] h-full">
+      <img
+        src={skyline}
+        alt={`${EVENT_CONFIG.text.city} Skyline`}
+        className="w-full h-full object-cover object-bottom opacity-90"
+      />
+      <img
+        src={skyline}
+        alt={`${EVENT_CONFIG.text.city} Skyline Duplicate`}
+        className="w-full h-full object-cover object-bottom opacity-90"
+      />
+    </div>
   </div>
 );
+
 
 const Marquee = () => {
   const items = [...EVENT_CONFIG.marqueeItems, ...EVENT_CONFIG.marqueeItems];
@@ -41,14 +49,14 @@ export default function Hero() {
     <div id="home" className="min-h-screen bg-[#FFFCF6] relative overflow-hidden font-sans selection:bg-blue-100 flex flex-col">
 
       {/* BACKGROUND GRID */}
+      {/* BACKGROUND GRID */}
       <div
-        className="absolute inset-0 z-[-20] opacity-[0.3]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#E5E7EB 1.5px, transparent 1.5px), linear-gradient(90deg, #E5E7EB 1.5px, transparent 1.5px)",
-          backgroundSize: "40px 40px",
-        }}
+        className="absolute inset-0 -z-10 h-full w-full 
+             bg-[#FFFCF6]
+             bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)]
+             bg-[size:6rem_4rem]"
       />
+
 
       {/* WHEELS + CONTENT */}
       <div className="relative w-full flex flex-col items-center justify-center flex-1">
@@ -153,6 +161,16 @@ export default function Hero() {
         .spin-fix img {
           display: block !important;
         }
+@keyframes skyline-loop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.skyline-scroll {
+  animation: skyline-loop 40s linear infinite;
+}
+
+
       `}</style>
     </div>
   );
