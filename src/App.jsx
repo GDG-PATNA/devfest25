@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 // import About from "./components/About";
-// import Speaker from "./components/Speaker";
+import Speaker from "./components/Speakers";
 // import Sponsers from "./components/Sponsers";
 import Team from "./components/Teams";
 // import Faq from "./components/Faq";
@@ -19,7 +19,7 @@ const Placeholder = ({ name, id }) => (
     </div>
 );
 const About = () => <Placeholder name="Why DevFest" id="why-DevFest" />;
-const Speaker = () => <Placeholder name="Speakers" id="speakers" />;
+// const Speaker = () => <Placeholder name="Speakers" id="speakers" />;
 const Sponsers = () => <Placeholder name="Sponsors" id="sponsors" />;
 // const Team = () => <Placeholder name="Team" id="team" />;
 const Faq = () => <Placeholder name="FAQ" id="faq" />;
