@@ -4,7 +4,7 @@ import './About.css';
 
 export default function About() {
     return (
-        <div className="container">
+        <div className="container bg-[#f7eedd]">
             <div className="left-panel">
                 <div className="header-section">
                     <h1 className="title">
