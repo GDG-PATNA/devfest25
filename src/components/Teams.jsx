@@ -25,7 +25,7 @@ import Nishant from "../assets/team/Nishant.jpg";
 import ShivangiGupta from "../assets/team/Shivangi.jpg";
 import kunalSinha from "../assets/team/KunalSinha.jpg";
 import SunnyKumar from "../assets/team/SunnyKumar.jpg";
-import ShashankBharti from "../assets/team/ShashankBharti.webp";
+import ShashankBharti from "../assets/team/ShashankBharti.png";
 import Vishwajeet from "../assets/team/Vishwajeet.jpg";
 import NikhilRaj from "../assets/team/NikhilRaj.jpg";
 
