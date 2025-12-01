@@ -8,6 +8,8 @@ import {
   FaYoutube
 } from "react-icons/fa";
 
+import logo from "../assets/logo.png";
+
 const Footer = () => {
   return (
     <footer className="bg-[#333333] text-white px-6 md:px-20 py-16">
@@ -20,7 +22,7 @@ const Footer = () => {
 
           {/* Logo + Title */}
           <div className="flex items-center gap-3">
-            <img src="/src/assets/logo.png" alt="GDG Logo" className="w-12" />
+            <img src={logo} alt="GDG Logo" className="w-12" />
             <h2 className="text-2xl md:text-3xl font-semibold">
               Google Developers Group <span className="font-light">Patna</span>
             </h2>
@@ -87,7 +89,7 @@ const Footer = () => {
 
             <div className="flex gap-5 text-3xl text-gray-300">
 
-              <a href="https://linkedin.com/company/gdgpatna" target="_blank">
+              <a href="https://www.linkedin.com/company/gdg-patna/posts/?feedView=all" target="_blank">
                 <FaLinkedin className="hover:text-white transition cursor-pointer" />
               </a>
 
@@ -117,6 +119,7 @@ const Footer = () => {
         </div>
       </div>
 
+      
       {/* Divider */}
       <div className="w-full border-t border-gray-600 mt-12 pt-6">
         <p className="text-center text-gray-400">
