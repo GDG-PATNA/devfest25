@@ -119,6 +119,7 @@ const Footer = () => {
         </div>
       </div>
 
+      
       {/* Divider */}
       <div className="w-full border-t border-gray-600 mt-12 pt-6">
         <p className="text-center text-gray-400">
