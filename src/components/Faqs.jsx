@@ -47,12 +47,12 @@ const Faqs = () => {
             <div className="w-full max-w-4xl">
                 {/* Heading */}
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl sm:text-4xl md:text-[40px] font-[800] leading-tight text-[#111827]">
+                    <h2 className="text-3xl sm:text-4xl md:text-[40px] font-extrabold leading-tight text-[#111827]">
                         Frequently Asked
                     </h2>
 
                     <div className="mt-3 inline-block">
-                        <span className="inline-block bg-[#FFB72B] border-[3px] border-black rounded-full px-8 py-3 text-2xl sm:text-3xl font-[800] text-white shadow-[0_6px_0_rgba(0,0,0,0.85)] rotate-[-4deg]">
+                        <span className="inline-block bg-[#FFB72B] border-[3px] border-black rounded-full px-8 py-3 text-2xl sm:text-3xl font-extrabold text-white shadow-[0_6px_0_rgba(0,0,0,0.85)] rotate-[-4deg]">
                             Questions
                         </span>
                     </div>
@@ -66,14 +66,14 @@ const Faqs = () => {
                         return (
                             <div
                                 key={index}
-                                className="relative mt-8 bg-[#4285F4] rounded-tr-[18px] rounded-br-[18px] rounded-bl-[18px] border-[2px] border-black px-4 sm:px-6 pt-3 pb-3 sm:pb-4"
+                                className="relative mt-8 bg-[#4285F4] rounded-tr-[18px] rounded-br-[18px] rounded-bl-[18px] border-2 border-black px-4 sm:px-6 pt-3 pb-3 sm:pb-4"
                             >
                                 {/* Tab-like top edge */}
-                                <div className="absolute -top-6 -left-0.5 h-6 w-25 rounded-t-[12px] bg-[#4285F4] border-t-[2px] border-x-[2px] border-black" />
+                                <div className="absolute -top-6 -left-0.5 h-6 w-25 rounded-t-xl bg-[#4285F4] border-t-2 border-x-2 border-black" />
 
                                 <div className="flex flex-col-reverse">
                                     {/* Bottom: divider + question row */}
-                                    <div className="-mx-4 sm:-mx-6 border-t-[2px] border-black rounded-t-[26px]">
+                                    <div className="-mx-4 sm:-mx-6 border-t-2 border-black rounded-t-[26px]">
                                         <button
                                             className="w-full flex items-start justify-between gap-2 sm:gap-3 pt-3 px-4 sm:px-6"
                                             onClick={() => toggleFAQ(index)}
@@ -83,7 +83,7 @@ const Faqs = () => {
                                                 {item.question}
                                             </span>
 
-                                            <span className="flex-shrink-0 flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-white border-[2px] border-black">
+                                            <span className="shrink-0 flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-white border-2 border-black">
                                                 {isActive ? (
                                                     <X className="h-4 w-4" />
                                                 ) : (
@@ -102,8 +102,8 @@ const Faqs = () => {
                                             } overflow-hidden`}
                                     >
                                         <div className="relative mt-2">
-                                            <div className="absolute inset-0 rounded-[18px] bg-black/10 translate-x-[6px] translate-y-[6px]" />
-                                            <div className="relative bg-white rounded-tr-[18px] rounded-tl-[18px] rounded-b-none border-[2px] border-b-0 border-black px-4 py-3 text-xs sm:text-sm font-semibold leading-relaxed -rotate-1">
+                                            <div className="absolute inset-0 rounded-[18px] bg-black/10 translate-x-1.5 translate-y-1.5" />
+                                            <div className="relative bg-white rounded-tr-[18px] rounded-tl-[18px] rounded-b-none border-2 border-b-0 border-black px-4 py-3 text-xs sm:text-sm font-semibold leading-relaxed -rotate-1">
                                                 {item.answer}
                                             </div>
                                         </div>
