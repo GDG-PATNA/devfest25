@@ -89,7 +89,7 @@ const Footer = () => {
 
             <div className="flex gap-5 text-3xl text-gray-300">
 
-              <a href="https://linkedin.com/company/gdgpatna" target="_blank">
+              <a href="https://www.linkedin.com/company/gdg-patna/posts/?feedView=all" target="_blank">
                 <FaLinkedin className="hover:text-white transition cursor-pointer" />
               </a>
 
