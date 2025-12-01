@@ -10,7 +10,7 @@ import TicketSection from "./components/ticket/TicketSection";
 import Speaker from "./components/Speakers";
 // import Sponsers from "./components/Sponsers";
 import Team from "./components/Teams";
-// import Faq from "./components/Faq";
+import Faq from "./components/Faqs";
 // import Footer from "./components/Footer";
 // import Partners from "./components/Partners";
 // import Agenda from "./components/Agenda";
@@ -28,7 +28,7 @@ const Placeholder = ({ name, id }) => (
 // const Speaker = () => <Placeholder name="Speakers" id="speakers" />;
 const Sponsers = () => <Placeholder name="Sponsors" id="sponsors" />;
 // const Team = () => <Placeholder name="Team" id="team" />;
-const Faq = () => <Placeholder name="FAQ" id="faq" />;
+// const Faq = () => <Placeholder name="FAQ" id="faq" />;
 const Footer = () => <div className="bg-black text-white p-10 text-center">Footer Content</div>;
 const Partners = () => <Placeholder name="Partners Page" />;
 const Agenda = () => <Placeholder name="Agenda Page" />;

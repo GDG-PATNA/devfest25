@@ -2,7 +2,7 @@ import React from 'react'
 
 const TicketSection = () => {
     return (
-        <div className='px-5 lg:px-25 bg-[#F2EBDA] '>
+        <div className='px-5 lg:px-25 bg-[#F8EFDC] '>
             <div className='py-25 sm:px-10 border-3 border-[#AFAA9F] border-t-0 border-b-0 border-solid flex flex-col justify-center items-center'>
                 <div className='bg-[#373737] w-full rounded-[50px] border-b-6 border-white shadow-[0px_3px_0px_4px_black] flex flex-col justify-start items-center overflow-hidden'>
                     <h1 className='text-white text-center pt-10 text-2xl md:text-4xl font-bold '>Get Your Ticket Now</h1>
@@ -12,7 +12,7 @@ const TicketSection = () => {
                     <img className='mt-0 w-2/3 translate-y-15 flex md:hidden filter-[drop-shadow(0_0_0px_white)_drop-shadow(0_0_22px_white)]' src="/src/assets/Ticket-mobile.svg" alt="" />
                 </div>
             </div>
-            <div className='border-t-3 -translate-y-5 mb-10 border-dashed border-[#AFAA9F]'></div>
+            <div className='border-t-3 -translate-y-5 border-dashed border-[#AFAA9F]'></div>
 
         </div>
     )
