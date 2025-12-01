@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Plus } from "lucide-react"; // ✅ NEW
 
 export default function WhatToExpect() {
     const [active, setActive] = useState(null);
@@ -44,7 +45,7 @@ export default function WhatToExpect() {
                 </h2>
 
                 {/* DESKTOP LEFT VERTICAL TITLE (FIXED FULLY) */}
-                <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 rotate-[-90deg]">
+                <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -rotate-90">
                     <h2 className="text-[70px] font-serif font-bold leading-none text-white text-center " >
                         <span className="block font-light opacity-80">What to</span>
                         <span className="block font-bold">Expect</span>
@@ -64,10 +65,8 @@ export default function WhatToExpect() {
                                 animate={{ borderRadius: "30px 30px 0 0" }}
                                 transition={spring}
                                 onClick={() => setActive(active === index ? null : index)}
-                                className={`cursor-pointer flex justify-between items-center 
-    px-6 py-6 min-h-[100px] lg:min-h-[110px] 
-    text-xl sm:text-2xl md:text-3xl lg:text-4xl 
-    font-semibold text-white ${item.color}`}
+                                className={`cursor-pointer flex justify-between items-center px-6 py-6 min-h-[100px] lg:min-h-[110px] 
+                                text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white ${item.color}`}
                             >
                                 {item.title}
 
@@ -75,13 +74,11 @@ export default function WhatToExpect() {
                                     initial={false}
                                     animate={{ rotate: active === index ? 45 : 0 }}
                                     transition={{ duration: 0.25 }}
-                                    className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full border-2 border-white"
+                                    className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full border-2 border-white text-white"
                                 >
-                                    <span className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">+</span>
+                                    <Plus className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" strokeWidth={3} />
                                 </motion.div>
                             </motion.div>
-
-
 
 
                             {/* BODY */}
