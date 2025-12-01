@@ -10,6 +10,7 @@ import Team from "./components/Teams";
 import Faq from "./components/Faqs";
 import Footer from "./components/Footer";
 import WhatToExpect from "./components/WhatToExpect";
+import Ticket from "./components/Ticket";
 
 const Placeholder = ({ name, id }) => (
   <div
@@ -65,7 +66,9 @@ export default function App() {
             <>
               <Hero />
 
-              {/* Make sure these ids match the #links in Nav */}
+              <section id="ticket">
+                <Ticket />
+              </section>
               <section id="about">
                 <About />
               </section>

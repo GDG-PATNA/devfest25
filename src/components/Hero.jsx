@@ -1,4 +1,3 @@
-
 /* =========================================================================
    FILE: ./components/Hero.jsx
    ========================================================================= */
@@ -45,10 +44,18 @@ const Marquee = () => {
 };
 
 export default function Hero() {
+
+  // 👉 Helper: smooth scroll to #tickets
+  const scrollToTickets = () => {
+    const el = document.getElementById("tickets");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div id="home" className="min-h-screen bg-[#FFFCF6] relative overflow-hidden font-sans selection:bg-blue-100 flex flex-col">
 
-      {/* BACKGROUND GRID */}
       {/* BACKGROUND GRID */}
       <div
         className="absolute inset-0 -z-10 h-full w-full 
@@ -56,7 +63,6 @@ export default function Hero() {
              bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)]
              bg-[size:6rem_4rem]"
       />
-
 
       {/* WHEELS + CONTENT */}
       <div className="relative w-full flex flex-col items-center justify-center flex-1">
@@ -114,7 +120,11 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-            <button className="bg-[#FBBC04] text-black font-bold text-lg px-10 py-3.5 rounded-full border-2 border-black shadow-[3px_3px_0px] hover:translate-y-1 hover:shadow-none transition-all">
+            {/* 🔻 Primary button: scroll to tickets */}
+            <button
+              onClick={scrollToTickets}
+              className="bg-[#FBBC04] text-black font-bold text-lg px-10 py-3.5 rounded-full border-2 border-black shadow-[3px_3px_0px] hover:translate-y-1 hover:shadow-none transition-all"
+            >
               {EVENT_CONFIG.buttons.primary}
             </button>
 
@@ -161,16 +171,15 @@ export default function Hero() {
         .spin-fix img {
           display: block !important;
         }
-@keyframes skyline-loop {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
 
-.skyline-scroll {
-  animation: skyline-loop 40s linear infinite;
-}
+        @keyframes skyline-loop {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
 
-
+        .skyline-scroll {
+          animation: skyline-loop 40s linear infinite;
+        }
       `}</style>
     </div>
   );
