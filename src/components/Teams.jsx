@@ -445,7 +445,7 @@ const Teams = () => {
   }, []);
 
   return (
-    <div className="bg-[#F8EFDC] sm:px-5 lg:px-25 ">
+    <div id="team" className="bg-[#F8EFDC] sm:px-5 lg:px-25 ">
       <div className='border-t-3 border-b-3 border-[#AFAA9F] flex flex-col md:flex-row justify-between items-start'>
         {/* LEFT SIDE */}
         <div
