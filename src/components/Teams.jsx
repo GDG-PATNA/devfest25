@@ -2,7 +2,7 @@ import React from 'react'
 import Card from './card/Card'
 import GDGCircular from './circularlogo/GDGCircular';
 import { useRef, useEffect, useState } from 'react';
-import AnuragVerma from "../assets/team/anuragverma.jpeg";
+import AnuragVerma from "../assets/team/AnuragVerma.jpeg";
 import BarkhaAgarwal from "../assets/team/BarkhaAgarwal.jpeg";
 // import HarshKapoor from "../assets/team/HarshKapoor.jpg";
 import AmikarAnanya from "../assets/team/Amikar.jpg";
