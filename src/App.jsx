@@ -16,6 +16,7 @@ import Faq from "./components/Faqs";
 // import Agenda from "./components/Agenda";
 // import BadgeGenerator from "./components/BadgeGenerator";
 // import Guidelines from "./components/Guidelines";
+import WhatToExpect from "./components/WhatToExpect";
 
 const Placeholder = ({ name, id }) => (
   <div id={id} className="min-h-[50vh] flex items-center justify-center border-t border-black bg-gray-50">
@@ -63,6 +64,7 @@ export default function App() {
             <>
               <Hero />
               <About />
+              <WhatToExpect/>
               <Speaker />
               <Sponsers />
               <Team />
