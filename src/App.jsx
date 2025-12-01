@@ -3,11 +3,14 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import About from "./components/about/About";
-//import Speaker from "./components/Speakers";
+// import Speaker from "./components/Speaker";
+
+// import About from "./components/About";
+import Speaker from "./components/Speakers";
 // import Sponsers from "./components/Sponsers";
-//import Team from "./components/Teams";
-import Faq from "./components/Faqs";
- import Footer from "./components/Footer";
+import Team from "./components/Teams";
+// import Faq from "./components/Faq";
+// import Footer from "./components/Footer";
 // import Partners from "./components/Partners";
 // import Agenda from "./components/Agenda";
 // import BadgeGenerator from "./components/BadgeGenerator";
@@ -18,15 +21,14 @@ const Placeholder = ({ name, id }) => (
         <h2 className="text-4xl font-bold text-gray-300">{name} Section</h2>
     </div>
 );
-
-const Speaker = () => <Placeholder name="Speakers" id="speakers" />;
-
 //const About = () => <Placeholder name="Why DevFest" id="why-DevFest" />;
-
+// const Speaker = () => <Placeholder name="Speakers" id="speakers" />;
+// const About = () => <Placeholder name="Why DevFest" id="why-DevFest" />;
+// const Speaker = () => <Placeholder name="Speakers" id="speakers" />;
 const Sponsers = () => <Placeholder name="Sponsors" id="sponsors" />;
-const Team = () => <Placeholder name="Team" id="team" />;
-//const Faq = () => <Placeholder name="FAQ" id="faq" />;
-//const Footer = () => <div className="bg-black text-white p-10 text-center">Footer Content</div>;
+// const Team = () => <Placeholder name="Team" id="team" />;
+const Faq = () => <Placeholder name="FAQ" id="faq" />;
+const Footer = () => <div className="bg-black text-white p-10 text-center">Footer Content</div>;
 const Partners = () => <Placeholder name="Partners Page" />;
 const Agenda = () => <Placeholder name="Agenda Page" />;
 const BadgeGenerator = () => <Placeholder name="Badge Page" />;
