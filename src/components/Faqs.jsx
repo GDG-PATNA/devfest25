@@ -29,11 +29,6 @@ const FAQS = [
             "Unfortunately, we won't be able to support you with with accomodation. Individual attendees has to take care of their accomodation by themselves only.",
     },
     {
-        question: "Will the accommodation facility provide to attendees?",
-        answer:
-            "Unfortunately, we won't be able to support you with with accomodation. Individual attendees has to take care of their accomodation by themselves only.",
-    },
-    {
         question: "If I have any queries, where do I contact?",
         answer:
             "Reach out to us at telegram @gdgpatna"
