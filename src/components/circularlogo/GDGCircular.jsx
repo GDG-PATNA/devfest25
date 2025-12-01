@@ -1,4 +1,5 @@
 import React from "react";
+import arrow from "../../assets/arrow.001.png"
 
 const GDGCircular = () => {
     return (
@@ -33,7 +34,7 @@ const GDGCircular = () => {
             </div>
 
             {/* Center Arrow (Fixed) */}
-            <img src="/src/assets/arrow.001.png" className="h-[50%]" alt="" />
+            <img src={arrow} className="h-[50%]" alt="" />
         </div>
     );
 };
