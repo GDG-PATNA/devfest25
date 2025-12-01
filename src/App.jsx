@@ -11,7 +11,7 @@ import Speaker from "./components/Speakers";
 // import Sponsers from "./components/Sponsers";
 import Team from "./components/Teams";
 import Faq from "./components/Faqs";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 // import Partners from "./components/Partners";
 // import Agenda from "./components/Agenda";
 // import BadgeGenerator from "./components/BadgeGenerator";
@@ -30,7 +30,7 @@ const Placeholder = ({ name, id }) => (
 const Sponsers = () => <Placeholder name="Sponsors" id="sponsors" />;
 // const Team = () => <Placeholder name="Team" id="team" />;
 // const Faq = () => <Placeholder name="FAQ" id="faq" />;
-const Footer = () => <div className="bg-black text-white p-10 text-center">Footer Content</div>;
+// Footer placeholder removed — using `./components/Footer` implementation
 const Partners = () => <Placeholder name="Partners Page" />;
 const Agenda = () => <Placeholder name="Agenda Page" />;
 const BadgeGenerator = () => <Placeholder name="Badge Page" />;
