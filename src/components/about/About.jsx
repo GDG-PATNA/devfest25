@@ -1,7 +1,7 @@
 import React from 'react';
 import audienceImage from '../../assets/audience.png';
 import './About.css';
-
+// 
 export default function About() {
     return (
         <div className="container bg-[#f7eedd]">
