@@ -15,7 +15,6 @@ const TicketSection = () => {
                 </div>
             </div>
             <div className='border-t-3 -translate-y-5 border-dashed border-[#AFAA9F]'></div>
-
         </div>
     )
 }
