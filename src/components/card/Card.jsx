@@ -28,6 +28,13 @@ const Card = ({ size = "l", data}) => {
                 data.color == 4 ? "border-[#3279F5]" :
                   "border-[#FF4C4C]";
 
+        const shadowColorClass =
+          data.color == 1 ? "shadow-[0px_3px_0px_1px_#B01205]" :
+            data.color == 2 ? "shadow-[0px_3px_0px_1px_#B48806]" :
+              data.color == 3 ? "shadow-[0px_3px_0px_1px_#019A2E]" :
+                data.color == 4 ? "shadow-[0px_3px_0px_1px_#3279F5]" :
+                  "--shadow-color: shadow-[0px_3px_0px_1px_#3279F5];";
+
   return (
     <div
       className={`
@@ -40,9 +47,9 @@ const Card = ({ size = "l", data}) => {
       {/* Image wrapper with gradient border */}
       <div className="p-0.5 rounded-lg">
         <div
-          className={`w-full aspect-square rounded-md bg-center bg-cover border-2 ${borderColorClass} shadow-[0px_3px_0px_1px_var(--shadow-color)]`}
+          className={`w-full aspect-square rounded-md bg-center bg-cover border-2 ${borderColorClass} ${shadowColorClass}`}
           style={{
-            backgroundImage: `url(${data.bgi})`,
+            backgroundImage: `url(${data.img})`,
             boxShadow: `${borderColorClass} 0px 3px 0px 1px`,
             }}></div>
       </div>
@@ -53,7 +60,7 @@ const Card = ({ size = "l", data}) => {
           <h2 className={`
           ${size === "l" ? "text-xl" : "text-sm"}
             text-sm font-bold leading-tight`}>{data.name}</h2>
-          <p className="text-xs opacity-80 font-medium mt-1">{data.role}</p>
+          <p className="text-xs opacity-80 font-medium mt-1 z-0">{data.role}</p>
 
           {data.desc && (
             <p className={`${size == "l" ? "text-[12px]" : "text-[10px]"} opacity-90 mt-2 leading-snug mr-4`}>{data.desc}</p>
@@ -62,22 +69,22 @@ const Card = ({ size = "l", data}) => {
 
         <div className={`h-full flex ${size == "l" ? "gap-4" : "gap-2"} flex-col items-center justify-center text-white text-lg`}>
           {data.linkedin &&
-            <a href="">
+            <a target="_blank" href={data.linkedin}>
               <FiLinkedin className={`${size == 'l' ? "text-3xl" : ""}`} />
             </a>
           }
           {data.github &&
-            <a href="">
+            <a traget="_blank" href={data.github}>
               <FiGithub className={`${size == 'l' ? "text-3xl" : ""}`} />
             </a>
           }
           {data.twitter &&
-            <a href="">
+            <a target="_blank" href={data.twitter}>
               <CiTwitter className={`${size == 'l' ? "text-3xl" : ""}`} />
             </a>
           }
           {data.instagram &&
-            <a href="">
+            <a traget="_blank" href={data.instagram}>
               <FaInstagram className={`${size == 'l' ? "text-3xl" : ""}`} />
             </a>
           }
