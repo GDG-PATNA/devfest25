@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import About from "./components/about/About";
+import TicketSection from "./components/ticket/TicketSection";
 // import Speaker from "./components/Speaker";
 
 // import About from "./components/About";
@@ -17,9 +18,9 @@ import Team from "./components/Teams";
 // import Guidelines from "./components/Guidelines";
 
 const Placeholder = ({ name, id }) => (
-    <div id={id} className="min-h-[50vh] flex items-center justify-center border-t border-black bg-gray-50">
-        <h2 className="text-4xl font-bold text-gray-300">{name} Section</h2>
-    </div>
+  <div id={id} className="min-h-[50vh] flex items-center justify-center border-t border-black bg-gray-50">
+    <h2 className="text-4xl font-bold text-gray-300">{name} Section</h2>
+  </div>
 );
 //const About = () => <Placeholder name="Why DevFest" id="why-DevFest" />;
 // const Speaker = () => <Placeholder name="Speakers" id="speakers" />;
@@ -65,6 +66,7 @@ export default function App() {
               <Speaker />
               <Sponsers />
               <Team />
+              <TicketSection />
               <Faq />
               <Footer />
             </>
