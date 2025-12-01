@@ -30,6 +30,10 @@ import Vishwajeet from "../assets/team/Vishwajeet.jpg";
 import NikhilRaj from "../assets/team/NikhilRaj.jpg";
 import ShivamKumar from "../assets/team/ShivamKumar.jpg";
 import TanyaGupta from "../assets/team/tanyaGupta.jpg";
+import HarshRaj from "../assets/team/HarshRaj.jpg";
+import VikashKumar from "../assets/team/VikashKumar.jpg";
+import TanyaJha from "../assets/team/TanyaJha.jpg";
+
 
 const teamData = [
   {
@@ -45,7 +49,7 @@ const teamData = [
     id: 2,
     img: BarkhaAgarwal,
     name: "Barkha Agarwal",
-    role: "co-Organizer",
+    role: "Co-Organizer",
     color: 2,
   },
   {
@@ -125,12 +129,12 @@ const teamData = [
   },
   {
     id: 11,
-    
+    img: HarshRaj,
     name: "Harsh Raj",
     role: "Photography & Videography Lead",
     color: 1,
-    linkedin: "",
-    twitter: "",
+    linkedin: "https://www.linkedin.com/in/harsh-raj-9981b428a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    instagram: "https://www.instagram.com/mr_harshu_sf_07?igsh=MWhrMzVqbnFoNXdsNQ==",
   },
   {
     id: 12,
@@ -286,6 +290,7 @@ const teamData = [
   },
   {
     id: 26,
+    img: TanyaJha,
     name: "Tanya Jha",
     role: "Content Writer",
     bgi: "/images/team20.jpg",
@@ -304,12 +309,13 @@ const teamData = [
   },
   {
     id: 28,
+    img: VikashKumar,
     name: "Vikash Kumar",
     role: "Network & Outreach",
     bgi: "/images/team20.jpg",
     color: 2,
     linkedin: "https://www.linkedin.com/in/vikash-kumar-619538258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    
+    instagram: "https://www.instagram.com/vikash__95_?igsh=MXZyZjEzajgxYWo0Mg==",
   },
   {
     id: 29,
