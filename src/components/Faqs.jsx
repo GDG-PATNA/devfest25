@@ -80,27 +80,30 @@ const Faqs = () => {
                                     {/* Bottom: divider + question row */}
                                     <div className="-mx-4 sm:-mx-6 border-t-[2px] border-black rounded-t-[26px]">
                                         <button
-                                            className="w-full flex items-center justify-between gap-3 pt-3 px-4 sm:px-6"
+                                            className="w-full flex items-start justify-between gap-2 sm:gap-3 pt-3 px-4 sm:px-6"
                                             onClick={() => toggleFAQ(index)}
                                         >
-                                            <span className="text-sm sm:text-base md:text-lg font-medium text-black">
+
+                                            <span className="flex-1 text-left text-sm sm:text-base md:text-lg font-medium text-black tracking-tight leading-snug">
                                                 {item.question}
                                             </span>
-                                            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white border-[2px] border-black">
+
+                                            <span className="flex-shrink-0 flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-white border-[2px] border-black">
                                                 {isActive ? (
                                                     <X className="h-4 w-4" />
                                                 ) : (
                                                     <Plus className="h-4 w-4" />
                                                 )}
                                             </span>
+
                                         </button>
                                     </div>
 
                                     {/* answer (expands upward) */}
                                     <div
                                         className={`transition-all duration-600 ease-out ${isActive
-                                                ? "max-h-40 sm:max-h-44 mb-3 opacity-100 "
-                                                : "max-h-0 mb-0 opacity-0"
+                                            ? "max-h-40 sm:max-h-44 mb-3 opacity-100 "
+                                            : "max-h-0 mb-0 opacity-0"
                                             } overflow-hidden`}
                                     >
                                         <div className="relative mt-2">
