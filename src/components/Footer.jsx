@@ -1,128 +1,131 @@
 import React from "react";
-import { Linkedin, Facebook, Instagram, Twitter, Youtube, MessageCircle } from "lucide-react";
+import {
+  FaLinkedin,
+  FaTelegramPlane,
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaYoutube
+} from "react-icons/fa";
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-gray-100">
-      {/* Top border */}
-      <div className="border-t border-gray-400"></div>
+    <footer className="bg-[#333333] text-white px-6 md:px-20 py-16">
 
-      {/* Main footer content */}
-      <div className="px-12 py-16">
-        <div className="grid grid-cols-2 gap-16">
-          {/* Left section */}
-          <div className="space-y-8">
-            {/* Logo and heading */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-400 via-red-400 to-yellow-400 rounded"></div>
-                <h3 className="text-xl font-semibold text-white">
-                  Google Developers Group Patna
-                </h3>
-              </div>
-            </div>
+      {/* Top */}
+      <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-0">
 
-            {/* Description */}
-            <p className="text-gray-300 text-sm leading-relaxed max-w-sm">
-              Google Developer Groups Patna is an initiative that brings together
-              developers across Bihar to learn, share knowledge, and build with
-              Google technologies.
-            </p>
+        {/* LEFT */}
+        <div className="md:w-1/2">
 
-            {/* Contact info */}
-            <div className="text-sm">
-              <span className="text-gray-400">Reach out to us at </span>
-              <a
-                href="https://telegram.me/gdgpatna"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
-              >
-                telegram @gdgpatna
+          {/* Logo + Title */}
+          <div className="flex items-center gap-3">
+            <img src="/src/assets/logo.png" alt="GDG Logo" className="w-12" />
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              Google Developers Group <span className="font-light">Patna</span>
+            </h2>
+          </div>
+
+          {/* Description */}
+          <p className="mt-5 text-lg leading-relaxed text-gray-300">
+            Google Developer Groups Patna is an initiative that brings
+            together developers across Bihar to learn, share knowledge, and
+            build with Google technologies.
+          </p>
+
+          <p className="mt-6 text-gray-300">
+            Reach out to us at {" "}
+            <a
+              href="https://t.me/gdgpatna"
+              target="_blank"
+              className="text-blue-300 underline"
+            >
+              telegram @gdgpatna
+            </a>
+          </p>
+
+        </div>
+
+        {/* RIGHT */}
+        <div className="md:w-1/2 flex flex-col md:flex-row justify-center md:justify-end gap-12">
+
+          {/* Useful Links */}
+          <div>
+            <h3 className="text-xl font-bold mb-4">USEFUL LINKS</h3>
+            <ul className="space-y-3 text-gray-300">
+
+              <li>
+                <a href="/devfest-2025" className="hover:text-white transition">
+                  Devfest 2025
+                </a>
+              </li>
+
+              <li>
+                <a href="/community" className="hover:text-white transition">
+                  Community
+                </a>
+              </li>
+
+              <li>
+                <a href="/about-devfest" className="hover:text-white transition">
+                  About Devfest
+                </a>
+              </li>
+
+              <li>
+                <a href="/about-gdg" className="hover:text-white transition">
+                  About GDG
+                </a>
+              </li>
+
+            </ul>
+          </div>
+
+          {/* Social Icons */}
+          <div>
+            <h3 className="text-xl font-bold mb-4">OUR SOCIALS</h3>
+
+            <div className="flex gap-5 text-3xl text-gray-300">
+
+              <a href="https://linkedin.com/company/gdgpatna" target="_blank">
+                <FaLinkedin className="hover:text-white transition cursor-pointer" />
               </a>
+
+              <a href="https://t.me/gdgpatna" target="_blank">
+                <FaTelegramPlane className="hover:text-white transition cursor-pointer" />
+              </a>
+
+              <a href="https://facebook.com/gdgpatna" target="_blank">
+                <FaFacebookF className="hover:text-white transition cursor-pointer" />
+              </a>
+
+              <a href="https://instagram.com/gdgpatna" target="_blank">
+                <FaInstagram className="hover:text-white transition cursor-pointer" />
+              </a>
+
+              <a href="https://twitter.com/gdgpatna" target="_blank">
+                <FaTwitter className="hover:text-white transition cursor-pointer" />
+              </a>
+
+              <a href="https://youtube.com/@gdgpatna" target="_blank">
+                <FaYoutube className="hover:text-white transition cursor-pointer" />
+              </a>
+
             </div>
           </div>
 
-          {/* Right section */}
-          <div className="space-y-8">
-            {/* Useful links */}
-            <div>
-              <h4 className="text-white font-semibold text-sm mb-4 tracking-wide">
-                USEFUL LINKS
-              </h4>
-              <ul className="space-y-3 text-sm text-gray-300">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Devfest 2025
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    About Devfest
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Community
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Social links */}
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-400">Connect with us</span>
-              <div className="flex gap-3">
-                <a
-                  href="#"
-                  className="p-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="p-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors"
-                  aria-label="Telegram"
-                >
-                  <MessageCircle size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="p-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="p-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="p-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="p-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors"
-                  aria-label="YouTube"
-                >
-                  <Youtube size={20} />
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
-      {/* Bottom copyright */}
-      <div className="text-center py-6 text-gray-500 text-sm border-t border-gray-700">
-        © Google Developer Groups Patna 2025
+      {/* Divider */}
+      <div className="w-full border-t border-gray-600 mt-12 pt-6">
+        <p className="text-center text-gray-400">
+          © Google Developer Groups Patna 2025
+        </p>
       </div>
+
     </footer>
   );
-}
+};
+
+export default Footer;

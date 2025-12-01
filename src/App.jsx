@@ -65,8 +65,8 @@ export default function App() {
               <Hero />
               <About />
               <WhatToExpect/>
-              <Speaker />
-              <Sponsers />
+              {/* <Speaker /> */}
+              {/* <Sponsers /> */}
               <Team />
               <TicketSection />
               <Faq />
