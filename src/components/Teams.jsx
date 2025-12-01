@@ -28,6 +28,8 @@ import SunnyKumar from "../assets/team/SunnyKumar.jpg";
 import ShashankBharti from "../assets/team/Shashankbharti.png";
 import Vishwajeet from "../assets/team/Vishwajeet.jpg";
 import NikhilRaj from "../assets/team/NikhilRaj.jpg";
+import ShivamKumar from "../assets/team/ShivamKumar.jpg";
+import TanyaGupta from "../assets/team/TanyaGupta.jpg";
 
 
 const teamData = [
@@ -77,12 +79,13 @@ const teamData = [
   },
    {
     id: 6,
+    img: TanyaGupta,
     name: "Tanya Gupta",
     role: "Operation & Management Co-Lead",
     bgi: "/images/team11.jpg",
     color: 4,
     linkedin: "https://www.linkedin.com/in/chulbulitanya/",
-   
+    twitter: "https://x.com/TanyaGupta25?t=kaK0AZ5BVXlZI9w3n6xugg&s=09",
   },
   {
     id: 7,
@@ -223,13 +226,13 @@ const teamData = [
   },
    {
     id: 42,
-    // img: SunnyKumar,
+    img: ShivamKumar,
     name: "Shivam Kumar",
     role: "Website Developer",
     bgi: "/images/team20.jpg",
     color: 2,
-    // linkedin: "https://www.linkedin.com/in/sunny-kumar-a06484297/",
-    // github: "https://github.com/sunnyajit",
+    linkedin: "https://www.linkedin.com/in/shivadhruva",
+    github: "https://github.com/shivaarajput",
   },
   {
     id: 21,
@@ -562,4 +565,5 @@ const Teams = () => {
     </div>
   )
 }
+
 export default Teams;

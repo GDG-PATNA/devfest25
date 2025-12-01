@@ -43,7 +43,7 @@ const Faqs = () => {
     };
 
     return (
-        <section className="w-full bg-[#F7EEDC] py-16 px-4 flex justify-center rounded-b-[42px]">
+        <section id="faq" className="w-full bg-[#F7EEDC] py-16 px-4 flex justify-center rounded-b-[42px]">
             <div className="w-full max-w-4xl">
                 {/* Heading */}
                 <div className="text-center mb-16">
