@@ -31,7 +31,6 @@ import NikhilRaj from "../assets/team/NikhilRaj.jpg";
 import ShivamKumar from "../assets/team/ShivamKumar.jpg";
 import TanyaGupta from "../assets/team/tanyaGupta.jpg";
 
-
 const teamData = [
   {
     id: 1,
