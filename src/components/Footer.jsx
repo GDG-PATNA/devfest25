@@ -20,7 +20,7 @@ const Footer = () => {
 
           {/* Logo + Title */}
           <div className="flex items-center gap-3">
-            <img src="/src/assets/logo1.png" alt="GDG Logo" className="w-12" />
+            <img src="/src/assets/logo.png" alt="GDG Logo" className="w-12" />
             <h2 className="text-2xl md:text-3xl font-semibold">
               Google Developers Group <span className="font-light">Patna</span>
             </h2>
