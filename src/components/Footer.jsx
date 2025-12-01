@@ -8,6 +8,8 @@ import {
   FaYoutube
 } from "react-icons/fa";
 
+import logo from "../assets/logo.png";
+
 const Footer = () => {
   return (
     <footer className="bg-[#333333] text-white px-6 md:px-20 py-16">
@@ -20,7 +22,7 @@ const Footer = () => {
 
           {/* Logo + Title */}
           <div className="flex items-center gap-3">
-            <img src="/src/assets/logo.png" alt="GDG Logo" className="w-12" />
+            <img src={logo} alt="GDG Logo" className="w-12" />
             <h2 className="text-2xl md:text-3xl font-semibold">
               Google Developers Group <span className="font-light">Patna</span>
             </h2>
