@@ -29,7 +29,7 @@ import ShashankBharti from "../assets/team/Shashankbharti.png";
 import Vishwajeet from "../assets/team/Vishwajeet.jpg";
 import NikhilRaj from "../assets/team/NikhilRaj.jpg";
 import ShivamKumar from "../assets/team/ShivamKumar.jpg";
-import TanyaGupta from "../assets/team/TanyaGupta.jpg";
+import TanyaGupta from "../assets/team/tanyaGupta.jpg";
 
 
 const teamData = [
