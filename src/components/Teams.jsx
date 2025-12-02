@@ -148,9 +148,7 @@ const teamData = [
     bgi: "/images/team12.jpg",
     color: 2,
     // linkedin: "https://linkedin.com/in/pooja",
-    github: null,
-    twitter: null,
-    // instagram: "https://instagram.com/pooja"
+
   },
   {
     id: 13,
