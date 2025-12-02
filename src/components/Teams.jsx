@@ -33,6 +33,11 @@ import TanyaGupta from "../assets/team/tanyaGupta.jpg";
 import HarshRaj from "../assets/team/HarshRaj.jpg";
 import VikashKumar from "../assets/team/VikashKumar.jpg";
 import TanyaJha from "../assets/team/TanyaJha.jpg";
+import NigamKumar from "../assets/team/NigamKumar.jpg";
+import Keshvisri from "../assets/team/Keshvisri.jpg";
+import RiyaKumari from "../assets/team/RiyaKumari.jpg";
+import RajkantKumar from "../assets/team/RajkantKumar.jpg";
+import AlokRaj from "../assets/team/AlokRaj.jpg";
 
 
 const teamData = [
@@ -67,7 +72,7 @@ const teamData = [
     name: "Ayush Roy",
     role: "Tech Co-Lead",
     linkedin: "https://www.linkedin.com/in/ayushroyl",
-    github: "https://github.com/ayushroyl",
+    instagram: "https://instagram.com/ayushroyl",
     color: 2,
   },
   {
@@ -143,9 +148,7 @@ const teamData = [
     bgi: "/images/team12.jpg",
     color: 2,
     // linkedin: "https://linkedin.com/in/pooja",
-    github: null,
-    twitter: null,
-    // instagram: "https://instagram.com/pooja"
+
   },
   {
     id: 13,
@@ -170,10 +173,10 @@ const teamData = [
     id: 15,
     img: SumanPrakash,
     name: "Suman P. Narayan",
-    role: "Social Media Lead",
+    role: "Operation Lead",
     color: 1,
     linkedin: "https://www.linkedin.com/in/suman-narayan-221563221",
-    github: "https://x.com/sumanprakash_22?t=lnGBLDMt2Ycr-TNwNpy4rQ&s=09",
+    
   },
   {
     id: 16,
@@ -225,7 +228,7 @@ const teamData = [
     bgi: "/images/team20.jpg",
     color: 1,
     linkedin: "https://www.linkedin.com/in/sunny-kumar-a06484297/",
-    github: "https://github.com/sunnyajit",
+    instagram: "https://www.instagram.com/sunnykr_sde/",
   },
    {
     id: 42,
@@ -281,6 +284,7 @@ const teamData = [
   },
   {
     id: 25,
+    img: Keshvisri,
     name: "Keshvisri",
     role: "Content Writer",
     bgi: "/images/team20.jpg",
@@ -374,12 +378,13 @@ const teamData = [
   },
   {
     id: 35,
+    img: RajkantKumar,
     name: "Rajkant Kumar",
     role: "Video Production",
     bgi: "/images/team20.jpg",
     color: 2,
     linkedin: "https://www.linkedin.com/in/rajkant-kumar-4161b0335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-   
+    instagram: "https://www.instagram.com/mr._incredible_45?utm_source=qr&igsh=Y2FtaHc5cjh5am1w",
   },
   {
     id: 36,
@@ -414,15 +419,17 @@ const teamData = [
   },
     {
     id: 39,
+    img: AlokRaj,
     name: "Alok Raj",
     role: "Graphic Designer",
     bgi: "/images/team20.jpg",
     color: 3,
     linkedin: "http://www.linkedin.com/in/alokraj-cse",
-    
+    github: "https://github.com/A1okRaj",
   },
     {
     id: 40,
+    img: RiyaKumari,
     name: "Riya Kumari",
     role: "Social Media Management",
     bgi: "/images/team20.jpg",
@@ -432,12 +439,13 @@ const teamData = [
   },
     {
     id: 41,
+    img: NigamKumar,
     name: "Nigam Kumar",
     role: "Social Media Management",
     bgi: "/images/team20.jpg",
     color: 2,
     linkedin: "https://www.linkedin.com/in/nigam-kumar-b78a4b286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    
+    instagram: "https://www.instagram.com/nigam_kumarsingh?igsh=cDNzZXZnYmF5aTZ6",
   }
 ];
 
