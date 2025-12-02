@@ -1,0 +1,53 @@
+/* for prociono -secondary font */
+
+@import url('https://fonts.googleapis.com/css2?family=Prociono&display=swap');
+
+.prociono-regular {
+  font-family: "Prociono", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* use tailwind's custom font var - font-[prociono-regular] */
+
+
+/* for product sans */
+
+@font-face {
+  font-family: "Product Sans Regular";
+  src: url("/src/assets/fonts/ProductSans-Regular.woff") format("woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Product Sans Bold";
+  src: url("/src/assets/fonts/ProductSans-Bold.woff") format("woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Product Sans Black";
+  src: url("/src/assets/fonts/ProductSans-Black.woff") format("woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+.font-product-regular {
+    font-family: "Product Sans Regular", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    font-weight: 400;
+}
+.font-product-bold {
+    font-family: "Product Sans Bold", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    font-weight: 700;
+}
+.font-product-black {
+    font-family: "Product Sans Black", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    font-weight: 900;
+}
+}
+
+/* use font-product-<weight> */

@@ -5,6 +5,7 @@
    ========================================================================= */
 import React, { useEffect, useState } from "react";
 import devfestImg from "../assets/devfestImg2.png"
+import devfestLogo from "../assets/gdgDevfestLogo.svg"
 import close from "../assets/close.svg";
 import menu from "../assets/menu.svg";
 import { HashLink as Link } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
@@ -31,15 +32,15 @@ export default function Nav() {
   }, []);
   return (
     <header className="flex justify-center">
-      <div className="md:w-[80%] md:mx-auto md:rounded-2xl w-full fixed md:top-3 top-0 flex items-center justify-between p-3 border-b-[1px] z-50 bg-[#EEEEEE] backdrop-blur-[4px]">
+      <div className="md:max-w-7xl md:min-w-2xl mt-2 md:mx-auto rounded-2xl w-[calc(100%-3.33%)] fixed md:top-3 py-4 top-0 flex items-center justify-between p-3 border-1 border-b-3 z-50 shadow-sm bg-gray-100/90 backdrop-blur-xs">
         <div className="flex items-center ml-6  ">
           <img
-            src={devfestImg}
+            src={devfestLogo}
             alt="DevFest Patna 2025"
-            className="w-[80%]  inline-block"
+            className="w-[calc(100%-34%)]  md:w-full    inline-block"
           />
         </div>
-        <ul className="hidden lg:flex justify-evenly ">
+        <ul className="hidden font-product-regular lg:flex justify-evenly ">
           {Menu.map((item, id) => (
             <li className="mx-1" key={id}>
               <Link
@@ -64,14 +65,14 @@ export default function Nav() {
         {/* Responsive Nav for Mobiles */}
         <div
           onClick={() => setToggle(!toggle)}
-          className="lg:hidden flex fles-1 justify-end items-center w-16"
+          className="lg:hidden flex  justify-end items-center  w-16"
         >
           <img
             src={toggle ? menu : close}
-            className="animate-bounce w-12 text-black"
+            className="animate-bounce w-6 "
           />
           <div
-            className={`fixed right-1 top-[3rem] p-2 rounded bg-[rgba(0,0,0,0.6)] backdrop-blur-[4px] z-50 ${toggle ? "hidden" : "flex"
+            className={`fixed  top-[4rem] p-2 rounded-xl bg-black/80 backdrop-blur-xs z-50 ${toggle ? "hidden" : "flex"
               }`}
           >
             <ul
@@ -79,7 +80,7 @@ export default function Nav() {
                 } flex flex-col justify-center item-end`}
             >
               {Menu.map((item, id) => (
-                <li className="mx-1 my-2" key={id}>
+                <li className="mx-1 font-product-regular my-2" key={id}>
                   <Link
                     onClick={() => {
                       if (!item.url.includes("#")) {
