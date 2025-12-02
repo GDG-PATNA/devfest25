@@ -175,10 +175,10 @@ const teamData = [
     id: 15,
     img: SumanPrakash,
     name: "Suman P. Narayan",
-    role: "Social Media Lead",
+    role: "Operation Lead",
     color: 1,
     linkedin: "https://www.linkedin.com/in/suman-narayan-221563221",
-    github: "https://x.com/sumanprakash_22?t=lnGBLDMt2Ycr-TNwNpy4rQ&s=09",
+    
   },
   {
     id: 16,
@@ -230,7 +230,7 @@ const teamData = [
     bgi: "/images/team20.jpg",
     color: 1,
     linkedin: "https://www.linkedin.com/in/sunny-kumar-a06484297/",
-    github: "https://github.com/sunnyajit",
+    instagram: "https://www.instagram.com/sunnykr_sde/",
   },
    {
     id: 42,
