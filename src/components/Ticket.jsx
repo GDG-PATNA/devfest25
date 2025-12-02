@@ -1,5 +1,6 @@
 // src/components/Ticket.jsx
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function getTimeLeft() {
   const endDate = new Date(2025, 11, 8, 23, 59, 59); // 8 Dec 2025, local time
@@ -86,13 +87,14 @@ export default function Ticket() {
               </span>
             </p>
 
-            <a
-              href="/guideline"
-              className="text-[10px] sm:text-[11px] font-medium text-[#111827] underline cursor-pointer
-               mt-1 sm:mt-0 sm:absolute sm:right-0 sm:top-1"
+            <Link
+              to="/guideline"
+              className="text-[10px] sm:text[11px] font-medium text-[#111827] underline cursor-pointer
+   mt-1 sm:mt-0 sm:absolute sm:right-0 sm:top-1"
             >
               *Read Ticket Guidelines
-            </a>
+            </Link>
+
           </div>
         </div>
 
