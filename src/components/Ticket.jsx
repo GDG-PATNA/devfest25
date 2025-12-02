@@ -52,11 +52,11 @@ export default function Ticket() {
           </p>
 
           {timeLeft.expired ? (
-            <div className="px-4 py-2 rounded-full bg-white border-[2px] border-black text-xs sm:text-sm font-semibold text-[#B91C1C] shadow-[2px_2px_0_0_rgba(0,0,0,1)]">
+            <div className="px-4 py-2 rounded-full bg-white border-2 border-black text-xs sm:text-sm font-semibold text-[#B91C1C] shadow-[2px_2px_0_0_rgba(0,0,0,1)]">
               Early Bird sale has ended. Regular tickets may still be available.
             </div>
           ) : (
-            <div className="inline-flex items-stretch gap-2 sm:gap-3 px-3 py-2 sm:px-4 sm:py-3 bg-white rounded-full border-[2px] border-black shadow-[3px_3px_0_0_rgba(0,0,0,1)] animate-[pulse_2.4s_ease-in-out_infinite]">
+            <div className="inline-flex items-stretch gap-2 sm:gap-3 px-3 py-2 sm:px-4 sm:py-3 bg-white rounded-full border-2 border-black shadow-[3px_3px_0_0_rgba(0,0,0,1)] animate-[pulse_2.4s_ease-in-out_infinite]">
               {[
                 { label: "Days", value: timeLeft.days },
                 { label: "Hours", value: timeLeft.hours },
@@ -78,18 +78,28 @@ export default function Ticket() {
             </div>
           )}
 
-          <p className="text-[10px] sm:text-xs text-[#6B7280]">
-            Early Bird valid till{" "}
-            <span className="font-semibold text-[#111827]">
-              8 Dec 2025, 11:59 PM
-            </span>
-          </p>
+          <div className="relative w-full mt-1 flex flex-col items-center">
+            <p className="text-[10px] sm:text-xs text-[#6B7280] text-center w-full">
+              Early Bird valid till{" "}
+              <span className="font-semibold text-[#111827]">
+                8 Dec 2025, 11:59 PM
+              </span>
+            </p>
+
+            <a
+              href="/guideline"
+              className="text-[10px] sm:text-[11px] font-medium text-[#111827] underline cursor-pointer
+               mt-1 sm:mt-0 sm:absolute sm:right-0 sm:top-1"
+            >
+              *Read Ticket Guidelines
+            </a>
+          </div>
         </div>
 
         {/* Ticket widget – focus area */}
         <div className="w-full">
           <iframe
-            className="w-full rounded-[16px] border-[2px] border-black"
+            className="w-full rounded-2xl border-2 border-black"
             style={{ boxShadow: "3px 3px 0px 0px black" }}
             src="https://konfhub.com/widget/devfest-patna-25?desc=true&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=67139%2C67143&ticketId=67139%7C%3B67143%7C"
             id="konfhub-widget"
