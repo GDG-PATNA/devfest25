@@ -11,6 +11,7 @@ import Faq from "./components/Faqs";
 import Footer from "./components/Footer";
 import WhatToExpect from "./components/WhatToExpect";
 import Ticket from "./components/Ticket";
+import TermsAndConditions from "./pages/TC";
 
 const Placeholder = ({ name, id }) => (
   <div
@@ -98,6 +99,7 @@ export default function App() {
         <Route path="/agenda" element={<Agenda />} />
         <Route path="/badge" element={<BadgeGenerator />} />
         <Route path="/guideline" element={<Guidelines />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       </Routes>
     </>
   );
