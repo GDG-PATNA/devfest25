@@ -33,6 +33,9 @@ import TanyaGupta from "../assets/team/tanyaGupta.jpg";
 import HarshRaj from "../assets/team/HarshRaj.jpg";
 import VikashKumar from "../assets/team/VikashKumar.jpg";
 import TanyaJha from "../assets/team/TanyaJha.jpg";
+import NigamKumar from "../assets/team/NigamKumar.jpg";
+import Keshvisri from "../assets/team/Keshvisri.jpg";
+import RiyaKumari from "../assets/team/RiyaKumari.jpg";
 
 
 const teamData = [
@@ -281,6 +284,7 @@ const teamData = [
   },
   {
     id: 25,
+    img: Keshvisri,
     name: "Keshvisri",
     role: "Content Writer",
     bgi: "/images/team20.jpg",
@@ -423,6 +427,7 @@ const teamData = [
   },
     {
     id: 40,
+    img: RiyaKumari,
     name: "Riya Kumari",
     role: "Social Media Management",
     bgi: "/images/team20.jpg",
@@ -432,12 +437,13 @@ const teamData = [
   },
     {
     id: 41,
+    img: NigamKumar,
     name: "Nigam Kumar",
     role: "Social Media Management",
     bgi: "/images/team20.jpg",
     color: 2,
     linkedin: "https://www.linkedin.com/in/nigam-kumar-b78a4b286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    
+    instagram: "https://www.instagram.com/nigam_kumarsingh?igsh=cDNzZXZnYmF5aTZ6",
   }
 ];
 
