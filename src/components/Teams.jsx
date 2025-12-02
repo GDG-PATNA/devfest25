@@ -72,7 +72,7 @@ const teamData = [
     name: "Ayush Roy",
     role: "Tech Co-Lead",
     linkedin: "https://www.linkedin.com/in/ayushroyl",
-    github: "https://github.com/ayushroyl",
+    instagram: "https://instagram.com/ayushroyl",
     color: 2,
   },
   {
