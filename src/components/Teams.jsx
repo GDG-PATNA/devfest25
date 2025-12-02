@@ -36,6 +36,8 @@ import TanyaJha from "../assets/team/TanyaJha.jpg";
 import NigamKumar from "../assets/team/NigamKumar.jpg";
 import Keshvisri from "../assets/team/Keshvisri.jpg";
 import RiyaKumari from "../assets/team/RiyaKumari.jpg";
+import RajkantKumar from "../assets/team/RajkantKumar.jpg";
+import AlokRaj from "../assets/team/AlokRaj.jpg";
 
 
 const teamData = [
@@ -378,12 +380,13 @@ const teamData = [
   },
   {
     id: 35,
+    img: RajkantKumar,
     name: "Rajkant Kumar",
     role: "Video Production",
     bgi: "/images/team20.jpg",
     color: 2,
     linkedin: "https://www.linkedin.com/in/rajkant-kumar-4161b0335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-   
+    instagram: "https://www.instagram.com/mr._incredible_45?utm_source=qr&igsh=Y2FtaHc5cjh5am1w",
   },
   {
     id: 36,
@@ -418,12 +421,13 @@ const teamData = [
   },
     {
     id: 39,
+    img: AlokRaj,
     name: "Alok Raj",
     role: "Graphic Designer",
     bgi: "/images/team20.jpg",
     color: 3,
     linkedin: "http://www.linkedin.com/in/alokraj-cse",
-    
+    github: "https://github.com/A1okRaj",
   },
     {
     id: 40,
