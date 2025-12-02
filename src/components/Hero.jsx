@@ -1,24 +1,26 @@
+
 /* =========================================================================
    FILE: ./components/Hero.jsx
    ========================================================================= */
 import { EVENT_CONFIG } from '../constants/config';
-import { Calendar } from "lucide-react";
+import { Calendar,MapPin } from "lucide-react";
 import skyline from "../assets/skyline.png"
 import wheelInner from "../assets/wheelin.svg"
 import wheelOuter from "../assets/wheelout.svg"
+import noiseTexture from "../assets/noiseTexture.png"
 
 const Skyline = () => (
-  <div className="relative w-full h-64 sm:h-80 md:h-[500px] z-0 pointer-events-none mt-auto overflow-hidden">
-    <div className="skyline-scroll flex w-[200%] h-full">
+  <div className="absolute bottom-10 w-full h-64 sm:h-80 translate-x-0 md:h-[vh] z-1 pointer-events-none  overflow-hidden">
+    <div className="skyline-scroll  flex h-full">
       <img
         src={skyline}
         alt={`${EVENT_CONFIG.text.city} Skyline`}
-        className="w-full h-full object-cover object-bottom opacity-90"
+        className="w-full h-full object-left object-cover opacity-100"
       />
       <img
         src={skyline}
         alt={`${EVENT_CONFIG.text.city} Skyline Duplicate`}
-        className="w-full h-full object-cover object-bottom opacity-90"
+        className="w-full h-full -ml-1 object-cover object-bottom opacity-100"
       />
     </div>
   </div>
@@ -28,7 +30,7 @@ const Skyline = () => (
 const Marquee = () => {
   const items = [...EVENT_CONFIG.marqueeItems, ...EVENT_CONFIG.marqueeItems];
   return (
-    <div className="bg-[#FDE293] py-3 border-t-2 border-black overflow-hidden whitespace-nowrap w-full z-[40] relative">
+    <div className="bg-[#FDE293] py-4 border-t-2 border-b-4 border-black overflow-hidden font-product-bold whitespace-nowrap w-full z-[40] absolute -bottom-0">
       <div className="inline-block animate-marquee">
         {items.map((item, index) => (
           <span
@@ -45,6 +47,7 @@ const Marquee = () => {
 
 export default function Hero() {
 
+  
   // 👉 Helper: smooth scroll to #tickets
   const scrollToTickets = () => {
     const el = document.getElementById("tickets");
@@ -54,88 +57,105 @@ export default function Hero() {
   };
 
   return (
-    <div id="home" className="min-h-screen bg-[#FFFCF6] relative overflow-hidden font-sans selection:bg-blue-100 flex flex-col">
-
+    <div id="home" className="w-full h-[110vh]  relative  font-sans selection:bg-blue-100 overflow-hidden flex flex-col">
+    
       {/* BACKGROUND GRID */}
-      <div
-        className="absolute inset-0 -z-10 h-full w-full 
-             bg-[#FFFCF6]
-             bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)]
-             bg-[size:6rem_4rem]"
-      />
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:5rem_5rem]"></div>
+      
+      <Skyline />
 
       {/* WHEELS + CONTENT */}
-      <div className="relative w-full flex flex-col items-center justify-center flex-1">
+      <div className="relative w-full  flex flex-col items-center justify-center h-[100vh]">
 
         {/* WHEELS ANIMATION */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-visible z-[10]">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-visible z-[0]">
+          {/* SKYLINE BG-FADE */}
+          <div className="w-full absolute h-70 z-30 bg-linear-to-t from-[#F7EEDC] to-amber-50/50 blur-2xl bottom-0"></div>
+
+          {/* WHEEL CONTAINER */}
+          <div className="container -left-42 md:left-0 top-8 md:top-7 md:mr-0 lg:mr-0 relative  flex items-center justify-center ">
+
           {/* OUTER WHEEL */}
-          <div className="absolute spin-fix w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] opacity-90 animate-spin-slow-cw z-[10]">
+          <div className="absolute spin-fix size-220 md:size-200  opacity-90 animate-spin-slow-cw z-[10]">
             <img
               src={wheelOuter}
-              className="w-full h-full object-contain block"
+              className="w-full h-full object-cover overflow-visible block"
               alt="Decoration Wheel Outer"
-            />
+              />
           </div>
 
           {/* INNER WHEEL */}
-          <div className="absolute spin-fix w-[400px] h-[400px] md:w-[750px] md:h-[750px] opacity-90 animate-spin-slow-ccw z-[20]">
+          <div className="absolute spin-fix size-180 md:size-170 opacity-90 animate-spin-slow-ccw z-[20]">
             <img
               src={wheelInner}
-              className="w-full h-full object-contain block"
+              className="w-full h-full object-cover overflow-visible block"
               alt="Decoration Wheel Inner"
-            />
+              />
           </div>
+              </div>
         </div>
 
         {/* HERO CONTENT (INSIDE WHEEL) */}
-        <main className="relative z-[30] pt-24 pb-10 flex flex-col items-center text-center px-4">
-          <div className="inline-flex items-center gap-2 bg-white border-2 border-black rounded-full px-8 py-3 mb-6 shadow">
-            <Calendar size={20} className="text-black" strokeWidth={2.5} />
-            <span className="font-bold text-black text-lg">{EVENT_CONFIG.text.date}</span>
-          </div>
 
-          <div className="flex flex-col items-center mb-8 relative">
-            <h1 className="text-6xl md:text-8xl font-[900] text-gray-900 leading-tight">
-              {EVENT_CONFIG.text.title}
-            </h1>
+        <main className="relative z-[30] pt-24 pb-10 flex flex-col items-center -mt-15 gap-2  text-left px-4 pointer-events-auto">
 
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-2">
-              <div className="relative group z-10 -mt-3">
-                <div className="absolute inset-0 bg-[#F1F3F4] rounded-[3rem] translate-x-2 translate-y-3 border-2 border-black" />
-                <div className="relative bg-[#6ea9ff] border-2 border-black rounded-[3rem] px-10 md:px-14 py-2 md:py-4 -rotate-3 overflow-hidden">
-                  <span className="relative z-10 text-4xl md:text-7xl font-[900] text-black">
-                    {EVENT_CONFIG.text.city}
-                  </span>
-                </div>
-              </div>
-              <span className="text-6xl md:text-8xl font-bold text-[#4285F4] rotate-2 ml-2">
-                {EVENT_CONFIG.text.year}
+          {/* DATE AND PLACE (ALTERNATING) */}
+
+          <div className="inline-flex place-self-start md:place-self-auto items-center h-10 bg-white/40 backdrop-blur-md border-2 border-black rounded-full px-3 md:px-8 overflow-hidden shadow">
+            <div className="relative h-full flex items-center">
+              {/* DATE */}
+              <span className="font-product-bold inline-flex items-center gap-2 text-sm md:text-lg text-black animate-date-fade">
+                <Calendar size={20} className="text-black" strokeWidth={2.5} />
+                {EVENT_CONFIG.text.date}
+              </span>
+              {/* PLACE */}
+              <span className="font-product-bold inline-flex items-center gap-2 text-sm md:text-lg text-black absolute left-0 animate-place-fade">
+                <MapPin size={20} className="text-black" strokeWidth={2.5} />
+                {EVENT_CONFIG.text.place}
               </span>
             </div>
           </div>
 
-          <p className="max-w-2xl text-gray-700 text-base md:text-lg mb-10 leading-relaxed font-medium bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-black/10">
+          <div className="flex flex-col place-self-start -ml-5 md:place-self-auto items-center relative">
+            <h1 className="text-6xl md:text-8xl font-product-black select-none tracking-tight text-gray-900 leading-tight">
+              {EVENT_CONFIG.text.title}
+            </h1>
+
+            <div className="flex flex-wrap items-center justify-center  gap-4 mt-2">
+              <div className="relative group z-10 -mt-7 translate-x-2 -rotate-6 hover:rotate-0 ease-out duration-300">
+                <div className="absolute inset-0 bg-white rounded-full translate-y-1.5  border-2 border-black" />
+                <div className="relative bg-linear-to-b from-blue-600 to-blue-200 border-2 border-black rounded-full px-4 md:px-6 py-1 md:py-0.5  overflow-hidden">
+                  <img src={noiseTexture} alt="" className="absolute left-0 top-0  opacity-80 mix-blend-plus-lighter pointer-events-none" />
+                  <span className="relative z-10  text-5xl md:text-[82px] font-product-black select-none text-black">
+                    {EVENT_CONFIG.text.city}
+                  </span>
+                </div>
+              </div>
+              <span className="text-6xl md:text-8xl font-bold text-[#4285F4] font-product-black first-letter:text-gray-900 -translate-y-5 select-none ">
+                '{EVENT_CONFIG.text.year}
+              </span>
+            </div>
+          </div>
+
+          <p className=" w-[17rem] md:w-[36rem] text-left md:text-center place-self-start md:place-self-auto text-gray-700 text-sm  md:text-[17px]  tracking-tight font-product-regular py-3 md:p-4 select-none">
             {EVENT_CONFIG.text.description}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-            {/* 🔻 Primary button: scroll to tickets */}
-            <button
-              onClick={scrollToTickets}
-              className="bg-[#FBBC04] text-black font-bold text-lg px-10 py-3.5 rounded-full border-2 border-black shadow-[3px_3px_0px] hover:translate-y-1 hover:shadow-none transition-all"
-            >
+          <div className="flex  h-15 place-self-start md:place-self-auto  gap-4 sm:gap-6 relative z-50">
+            <button 
+            onClick={scrollToTickets}
+            className="bg-[#FBBC04] text-nowrap text-black font-product-bold text-[18px]  md:px-10 px-5 md:py-2 rounded-full border-2 border-black shadow-[0px_3px_0px] hover:translate-y-1 hover:shadow-none transition-all select-none cursor-pointer">
               {EVENT_CONFIG.buttons.primary}
             </button>
-
-            <button className="bg-[#34A853] text-white font-bold text-lg px-10 py-3.5 rounded-full border-2 border-black shadow-[3px_3px_0px] hover:translate-y-1 hover:shadow-none transition-all">
+            <span className='border-black  shadow-[0px_3px_0px] hover:translate-y-1 hover:shadow-none rounded-full border-2 overflow-hidden '>
+            <button className="bg-[#34A853] w-30 md:w-full  h-full text-white font-product-bold text-[18px]  md:px-10 md:py-2  transition-all cursor-pointer ">
               {EVENT_CONFIG.buttons.secondary}
             </button>
+            </span>
           </div>
         </main>
       </div>
 
-      <Skyline />
       <Marquee />
 
       <style>{`
@@ -162,7 +182,7 @@ export default function Hero() {
         .animate-spin-slow-ccw {
           animation: spin-slow-ccw 50s linear infinite;
         }
-
+        
         .spin-fix {
           transform-style: preserve-3d;
           backface-visibility: hidden;
@@ -171,16 +191,43 @@ export default function Hero() {
         .spin-fix img {
           display: block !important;
         }
+@keyframes skyline-loop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
-        @keyframes skyline-loop {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
 
-        .skyline-scroll {
-          animation: skyline-loop 40s linear infinite;
-        }
+  @keyframes date-fade-cycle {
+    0% { opacity: 1; transform: translateY(0); }
+    45% { opacity: 1; transform: translateY(0); }
+    50% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 0; transform: translateY(-10px); }
+  }
+
+  @keyframes place-fade-cycle {
+    0% { opacity: 0; transform: translateY(10px); }
+    45% { opacity: 0; transform: translateY(10px); }
+    50% { opacity: 1; transform: translateY(0); }
+    95% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+  }
+
+  .animate-date-fade {
+    animation: date-fade-cycle 12s ease-in-out infinite;
+  }
+
+  .animate-place-fade {
+    animation: place-fade-cycle 12s ease-in-out infinite;
+  }
+
+.skyline-scroll {
+  /* animation: skyline-loop 40s linear infinite; */
+}
+       
+
+
       `}</style>
     </div>
+      
   );
 }

@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
+import "./assets/fonts/custom-font.css";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import About from "./components/about/About";
@@ -11,7 +12,6 @@ import Faq from "./components/Faqs";
 import Footer from "./components/Footer";
 import WhatToExpect from "./components/WhatToExpect";
 import Ticket from "./components/Ticket";
-import Guidelines from "./pages/Guidelines";
 
 const Placeholder = ({ name, id }) => (
   <div
@@ -25,6 +25,9 @@ const Placeholder = ({ name, id }) => (
 const Partners = () => <Placeholder name="Partners" id="partners" />;
 const Agenda = () => <Placeholder name="Agenda" id="agenda" />;
 const BadgeGenerator = () => <Placeholder name="Badge" id="badge" />;
+const Guidelines = () => (
+  <Placeholder name="Guidelines Page" id="guideline" />
+);
 
 export default function App() {
   const location = useLocation();
@@ -60,10 +63,10 @@ export default function App() {
       <Routes>
         <Route
           path="/"
-          element={
-            <>
-              <Hero />
+          element={<>
+            <Hero />
 
+            <div className=" bg-[#3A3A3A]">
               <section id="ticket">
                 <Ticket />
               </section>
@@ -88,7 +91,8 @@ export default function App() {
               </section>
 
               <Footer />
-            </>
+            </div>
+          </>
           }
         />
 
