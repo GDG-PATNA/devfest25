@@ -84,7 +84,7 @@ const Card = ({ size = "l", data}) => {
             </a>
           }
           {data.instagram &&
-            <a traget="_blank" href={data.instagram}>
+            <a target="_blank" href={data.instagram}>
               <FaInstagram className={`${size == 'l' ? "text-3xl" : ""}`} />
             </a>
           }
