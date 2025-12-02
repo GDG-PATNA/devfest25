@@ -40,7 +40,7 @@ export default function Nav() {
             className="w-[calc(100%-34%)]  md:w-full    inline-block"
           />
         </div>
-        <ul className="hidden font-product-regular lg:flex justify-evenly ">
+        <ul className="hidden font-product-semibold lg:flex justify-evenly ">
           {Menu.map((item, id) => (
             <li className="mx-1" key={id}>
               <Link
@@ -89,7 +89,7 @@ export default function Nav() {
                     }}
                     to={item.url}
                     smooth
-                    className={`min-w-full whitespace-nowrap font-semibold text-white
+                    className={`min-w-full whitespace-nowrap font-product-semibold text-white
                     px-4 py-2 rounded-full hover:bg-blue-600 transition-all duration-200`}
 
                   >

@@ -1,4 +1,3 @@
-
 /* =========================================================================
    FILE: ./components/Hero.jsx
    ========================================================================= */
@@ -70,7 +69,7 @@ export default function Hero() {
         {/* WHEELS ANIMATION */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-visible z-[0]">
           {/* SKYLINE BG-FADE */}
-          <div className="w-full absolute h-70 z-30 bg-linear-to-t from-[#F7EEDC] to-amber-50/50 blur-2xl bottom-0"></div>
+          <div className="w-full absolute h-80 z-30 bg-linear-to-t from-[#F7EEDC] to-amber-50/50 blur-2xl bottom-0"></div>
 
           {/* WHEEL CONTAINER */}
           <div className="container -left-42 md:left-0 top-8 md:top-7 md:mr-0 lg:mr-0 relative  flex items-center justify-center ">
@@ -137,7 +136,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <p className=" w-[17rem] md:w-[36rem] text-left md:text-center place-self-start md:place-self-auto text-gray-700 text-sm  md:text-[17px]  tracking-tight font-product-regular py-3 md:p-4 select-none">
+          <p className="w-68 md:w-160 text-left md:text-center place-self-start md:place-self-auto text-neutral-800 md:text-neutral-800 text-shadow-[0px_0px_13px]/30 text-sm md:text-[20px] tracking-tight font-product-semibold py-3 md:p-4 select-none">
             {EVENT_CONFIG.text.description}
           </p>
 
