@@ -491,8 +491,7 @@ const Teams = () => {
 
         {/* RIGHT SIDE — HEIGHT MATCHES LEFT */}
         <div
-          className="w-full md:w-[60%] overflow-y-auto border-3 border-[#AFAA9F] border-t-0 border-b-0 md:pt-25 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-scrollbar-width:0] min-h-screen"
-          style={{ height: leftHeight }}
+          className="w-full md:w-[60%] border-3 border-[#AFAA9F] border-t-0 border-b-0 md:pt-25 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-scrollbar-width:0]"
         >
           {/* overall lead */}
           <p className='w-full border-t-0 md:border-t-3 text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed pt-0 pb-10 md:py-10 border-l-0 border-r-0'>Overall Lead</p>
