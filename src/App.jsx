@@ -12,6 +12,7 @@ import Faq from "./components/Faqs";
 import Footer from "./components/Footer";
 import WhatToExpect from "./components/WhatToExpect";
 import Ticket from "./components/Ticket";
+import Guidelines from "./pages/Guidelines";
 
 const Placeholder = ({ name, id }) => (
   <div
@@ -25,9 +26,7 @@ const Placeholder = ({ name, id }) => (
 const Partners = () => <Placeholder name="Partners" id="partners" />;
 const Agenda = () => <Placeholder name="Agenda" id="agenda" />;
 const BadgeGenerator = () => <Placeholder name="Badge" id="badge" />;
-const Guidelines = () => (
-  <Placeholder name="Guidelines Page" id="guideline" />
-);
+
 
 export default function App() {
   const location = useLocation();
