@@ -2,7 +2,8 @@
    FILE: ./components/Hero.jsx
    ========================================================================= */
 import { EVENT_CONFIG } from '../constants/config';
-import { Calendar,MapPin } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import skyline from "../assets/skyline.png"
 import wheelInner from "../assets/wheelin.svg"
 import wheelOuter from "../assets/wheelout.svg"
@@ -46,7 +47,7 @@ const Marquee = () => {
 
 export default function Hero() {
 
-  
+
   // 👉 Helper: smooth scroll to #tickets
   const scrollToTickets = () => {
     const el = document.getElementById("tickets");
@@ -57,10 +58,10 @@ export default function Hero() {
 
   return (
     <div id="home" className="w-full h-[110vh]  relative  font-sans selection:bg-blue-100 overflow-hidden flex flex-col">
-    
+
       {/* BACKGROUND GRID */}
       <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:5rem_5rem]"></div>
-      
+
       <Skyline />
 
       {/* WHEELS + CONTENT */}
@@ -74,24 +75,24 @@ export default function Hero() {
           {/* WHEEL CONTAINER */}
           <div className="container -left-42 md:left-0 top-8 md:top-7 md:mr-0 lg:mr-0 relative  flex items-center justify-center ">
 
-          {/* OUTER WHEEL */}
-          <div className="absolute spin-fix size-220 md:size-200  opacity-90 animate-spin-slow-cw z-[10]">
-            <img
-              src={wheelOuter}
-              className="w-full h-full object-cover overflow-visible block"
-              alt="Decoration Wheel Outer"
+            {/* OUTER WHEEL */}
+            <div className="absolute spin-fix size-220 md:size-200  opacity-90 animate-spin-slow-cw z-[10]">
+              <img
+                src={wheelOuter}
+                className="w-full h-full object-cover overflow-visible block"
+                alt="Decoration Wheel Outer"
               />
-          </div>
+            </div>
 
-          {/* INNER WHEEL */}
-          <div className="absolute spin-fix size-180 md:size-170 opacity-90 animate-spin-slow-ccw z-[20]">
-            <img
-              src={wheelInner}
-              className="w-full h-full object-cover overflow-visible block"
-              alt="Decoration Wheel Inner"
+            {/* INNER WHEEL */}
+            <div className="absolute spin-fix size-180 md:size-170 opacity-90 animate-spin-slow-ccw z-[20]">
+              <img
+                src={wheelInner}
+                className="w-full h-full object-cover overflow-visible block"
+                alt="Decoration Wheel Inner"
               />
+            </div>
           </div>
-              </div>
         </div>
 
         {/* HERO CONTENT (INSIDE WHEEL) */}
@@ -141,15 +142,17 @@ export default function Hero() {
           </p>
 
           <div className="flex  h-15 place-self-start md:place-self-auto  gap-4 sm:gap-6 relative z-50">
-            <button 
-            onClick={scrollToTickets}
-            className="bg-[#FBBC04] text-nowrap text-black font-product-bold text-[18px]  md:px-10 px-5 md:py-2 rounded-full border-2 border-black shadow-[0px_3px_0px] hover:translate-y-1 hover:shadow-none transition-all select-none cursor-pointer">
+            <button
+              onClick={scrollToTickets}
+              className="bg-[#FBBC04] text-nowrap text-black font-product-bold text-[18px]  md:px-10 px-5 md:py-2 rounded-full border-2 border-black shadow-[0px_3px_0px] hover:translate-y-1 hover:shadow-none transition-all select-none cursor-pointer">
               {EVENT_CONFIG.buttons.primary}
             </button>
             <span className='border-black  shadow-[0px_3px_0px] hover:translate-y-1 hover:shadow-none rounded-full border-2 overflow-hidden '>
-            <button className="bg-[#34A853] w-30 md:w-full  h-full text-white font-product-bold text-[18px]  md:px-10 md:py-2  transition-all cursor-pointer ">
-              {EVENT_CONFIG.buttons.secondary}
-            </button>
+              <Link to="/badge">
+                <button className="bg-[#34A853] w-30 md:w-full h-full text-white font-product-bold text-[18px] md:px-10 md:py-2 transition-all cursor-pointer">
+                  {EVENT_CONFIG.buttons.secondary}
+                </button>
+              </Link>
             </span>
           </div>
         </main>
@@ -227,6 +230,6 @@ export default function Hero() {
 
       `}</style>
     </div>
-      
+
   );
 }

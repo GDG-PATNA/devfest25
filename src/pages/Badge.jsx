@@ -383,7 +383,7 @@ const Badge = () => {
                                     value={name}
                                     onChange={e => setName(e.target.value)}
                                     placeholder="Enter your full name"
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors bg-white"
+                                    className="w-full font-medium px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors bg-white"
                                 />
                             </div>
                             <div>
