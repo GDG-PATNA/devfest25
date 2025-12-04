@@ -14,14 +14,14 @@ const Badge = () => {
     const CONFIG = {
         photo: {
             x: 720,
-            y: 480,
-            radius: 170,
+            y: 460,
+            radius: 200,
         },
         name: {
             x: 720,
-            y: 740,
+            y: 720,
             color: '#000000',
-            font: 'bold 50px Inter, sans-serif',
+            font: 'bold 55px Inter, sans-serif',
         },
     };
 
