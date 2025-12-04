@@ -38,6 +38,7 @@ import Keshvisri from "../assets/team/Keshvisri.jpg";
 import RiyaKumari from "../assets/team/RiyaKumari.jpg";
 import RajkantKumar from "../assets/team/RajkantKumar.jpg";
 import AlokRaj from "../assets/team/AlokRaj.jpg";
+import SyedImran from "../assets/team/SyedImran.jpg";
 
 
 const teamData = [
@@ -239,6 +240,16 @@ const teamData = [
     color: 2,
     linkedin: "https://www.linkedin.com/in/shivadhruva",
     github: "https://github.com/shivaarajput",
+  },
+   {
+    id: 43,
+    img: SyedImran,
+    name: "Syed Imran Hassan",
+    role: "Website Developer",
+    bgi: "/images/team20.jpg",
+    color: 3,
+    linkedin: "https://www.linkedin.com/in/syed-hassan-8619162b9?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    instagram: "https://www.instagram.com/0110__syed",
   },
   {
     id: 21,
@@ -513,7 +524,7 @@ const Teams = () => {
           <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Technical Team</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(15, 21).map((data) => (
+              teamData.slice(15, 22).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
@@ -522,7 +533,7 @@ const Teams = () => {
           <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Operation & Management</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(21, 25).map((data) => (
+              teamData.slice(22, 26).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
@@ -531,7 +542,7 @@ const Teams = () => {
           <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Content Creation</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(25, 27).map((data) => (
+              teamData.slice(26, 28).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
@@ -540,7 +551,7 @@ const Teams = () => {
           <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Network & Outreach</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(27, 30).map((data) => (
+              teamData.slice(28, 31).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
@@ -549,7 +560,7 @@ const Teams = () => {
           <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Photography & Videography</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(30, 37).map((data) => (
+              teamData.slice(31, 38).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
@@ -558,7 +569,7 @@ const Teams = () => {
           <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Design Team</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(37, 40).map((data) => (
+              teamData.slice(38, 41).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
@@ -567,7 +578,7 @@ const Teams = () => {
           <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Social Media Management</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(40, 42).map((data) => (
+              teamData.slice(41, 43).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
