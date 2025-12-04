@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import WhatToExpect from "./components/WhatToExpect";
 import Ticket from "./components/Ticket";
 import Guidelines from "./pages/Guidelines";
+import Badge from "./pages/Badge";
 
 const Placeholder = ({ name, id }) => (
   <div
@@ -25,7 +26,7 @@ const Placeholder = ({ name, id }) => (
 
 const Partners = () => <Placeholder name="Partners" id="partners" />;
 const Agenda = () => <Placeholder name="Agenda" id="agenda" />;
-const BadgeGenerator = () => <Placeholder name="Badge" id="badge" />;
+
 
 
 export default function App() {
@@ -97,7 +98,7 @@ export default function App() {
 
         <Route path="/partners" element={<Partners />} />
         <Route path="/agenda" element={<Agenda />} />
-        <Route path="/badge" element={<BadgeGenerator />} />
+        <Route path="/badge" element={<Badge />} />
         <Route path="/guideline" element={<Guidelines />} />
       </Routes>
     </>
