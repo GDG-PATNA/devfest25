@@ -39,6 +39,10 @@ import RiyaKumari from "../assets/team/RiyaKumari.jpg";
 import RajkantKumar from "../assets/team/RajkantKumar.jpg";
 import AlokRaj from "../assets/team/AlokRaj.jpg";
 import SyedImran from "../assets/team/SyedImran.jpg";
+import RitikaSinha from "../assets/team/RitikaSinha.jpg";
+import VikashKumarSingh from "../assets/team/VikashKumarSingh.jpg";
+import AsifEkhlaque from "../assets/team/AsifEkhlaque.jpg";
+import SushilKumar from "../assets/team/SushilKumar.jpg";
 
 
 const teamData = [
@@ -144,11 +148,13 @@ const teamData = [
   },
   {
     id: 12,
-    name: "Asif",
+    img: AsifEkhlaque,
+    name: "Asif Ekhlaque",
     role: "Photography & Videography Co-Lead",
     bgi: "/images/team12.jpg",
     color: 2,
-    // linkedin: "https://linkedin.com/in/pooja",
+    linkedin: "https://www.linkedin.com/in/asifekhlaque",
+    instagram: "https://www.instagram.com/asif_0484_",
 
   },
   {
@@ -253,25 +259,23 @@ const teamData = [
   },
   {
     id: 21,
-    name: "Vikash Kumar Singh",
+    img: VikashKumarSingh,
+    name: "Vikash Kr. Singh",
     role: "Operation & Management",
     bgi: "/images/team20.jpg",
     color: 1,
-    // linkedin: "https://linkedin.com/in/aisha",
-    github: null,
-    // twitter: "https://twitter.com/aisha",
-    instagram: null
+    linkedin: "https://www.linkedin.com/in/vikash-kumar-singh-1ab36024b",
+    instagram: "https://www.instagram.com/vikash_singh_kushwaha01?igsh=MXJ0ZndxMHFqZzgzbA==",
   },
   {
     id: 22,
-    name: "Ritika",
+    img: RitikaSinha,
+    name: "Ritika Sinha",
     role: "Operation & Management",
     bgi: "/images/team20.jpg",
     color: 2,
-    // linkedin: "https://linkedin.com/in/aisha",
-    github: null,
-    // twitter: "https://twitter.com/aisha",
-    instagram: null
+    linkedin: "https://www.linkedin.com/in/ritika-sinha-88b351254?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    instagram: "https://www.instagram.com/sinha_ritika_04?igsh=MWJ6cmxlMHV2d3FweA==",
   },
   {
     id: 23,
@@ -345,20 +349,23 @@ const teamData = [
   },
   {
     id: 30,
+    img: VikashKumarSingh,
     name: "Vikash Kumar Singh",
     role: "Photography",
     bgi: "/images/team20.jpg",
     color: 1,
-   
+    linkedin: "https://www.linkedin.com/in/vikash-kumar-singh-1ab36024b",
+    instagram: "https://www.instagram.com/vikash_singh_kushwaha01?igsh=MXJ0ZndxMHFqZzgzbA==",
   },
   {
     id: 31,
+    img: SushilKumar,
     name: "Sushil Kumar",
     role: "Photography",
     bgi: "/images/team20.jpg",
     color: 2,
     linkedin: "https://www.linkedin.com/in/shushil-kumar-53993326a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-   
+    instagram: "https://www.instagram.com/maurya_shushil_kushwaha?igsh=c3dkM3Ywa3R6ejZl",
   },
   {
     id: 32,
