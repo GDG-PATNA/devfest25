@@ -415,7 +415,7 @@ const Badge = () => {
                                         <button
                                             key={shape.id}
                                             onClick={() => setFrameShape(shape.id)}
-                                            className={`flex flex-col items-center justify-center p-3 rounded-lg border-2 transition-all ${frameShape === shape.id ? 'border-blue-600 bg-blue-50 text-blue-600' : 'border-gray-300 hover:border-blue-400 bg-white'}`}
+                                            className={`flex flex-col items-center justify-center p-3 cursor-pointer rounded-lg border-2 transition-all ${frameShape === shape.id ? 'border-blue-600 bg-blue-50 text-blue-600' : 'border-gray-300 hover:border-blue-400 bg-white'}`}
                                             title={shape.name}
                                         >
                                             <span className="text-2xl mb-1">{shape.icon}</span>
@@ -428,7 +428,7 @@ const Badge = () => {
                                 <button
                                     onClick={downloadBadge}
                                     disabled={!generated}
-                                    className={`w-full flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-white ${generated ? 'bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5' : 'bg-gray-400 cursor-not-allowed'} transition-all duration-200`}
+                                    className={`w-full flex items-center justify-center px-8 py-4 border border-transparent text-lg cursor-pointer font-medium rounded-xl text-white ${generated ? 'bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5' : 'bg-gray-400 cursor-not-allowed'} transition-all duration-200`}
                                 >
                                     <Download className="w-6 h-6 mr-2" />
                                     Download Badge
