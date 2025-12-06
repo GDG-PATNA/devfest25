@@ -36,18 +36,19 @@ export default function Ticket() {
   return (
     <section
       id="tickets"
-      className="w-full bg-[#F7EEDC] py-12 px-4 flex justify-center"
+      className="w-full  h-screen px-4 md:px-32  bg-[#F7EEDC] "
     >
+      <div className="flex border-l-3 border-r-3   border-gray-500/50 items-center justify-center w-full h-full">
       <div className="w-full max-w-4xl">
         {/* Heading */}
         <div className="text-center mb-6 sm:mb-8">
-          <h2 className="text-2xl sm:text-3xl md:text-[32px] font-extrabold leading-tight text-[#111827]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-product-black leading-tight text-[#111827]">
             Book Your Ticket Now
           </h2>
         </div>
 
         {/* Timer */}
-        <div className="mb-6 sm:mb-8 flex flex-col items-center gap-3">
+        <div className="mb-6 sm:mb-8 font-product-bold flex flex-col items-center gap-3">
           <p className="text-[11px] sm:text-xs font-semibold tracking-[0.16em] uppercase text-[#6B7280]">
             Early Bird Ticket Sale Ends In:
           </p>
@@ -90,11 +91,10 @@ export default function Ticket() {
             <Link
               to="/guideline"
               className="text-[10px] sm:text[11px] font-medium text-[#111827] underline cursor-pointer
-   mt-1 sm:mt-0 sm:absolute sm:right-0 sm:top-1"
+              mt-1 sm:mt-0 sm:absolute sm:right-0 sm:top-1"
             >
               *Read Ticket Guidelines
             </Link>
-
           </div>
         </div>
 
@@ -111,6 +111,7 @@ export default function Ticket() {
             loading="lazy"
           ></iframe>
         </div>
+      </div>
       </div>
     </section>
   );

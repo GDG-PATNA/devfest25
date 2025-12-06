@@ -60,7 +60,7 @@ export default function Hero() {
     <div id="home" className="w-full h-[110vh]  relative  font-sans selection:bg-blue-100 overflow-hidden flex flex-col">
 
       {/* BACKGROUND GRID */}
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:5rem_5rem]"></div>
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f3f3f3_1.5px,transparent_1px),linear-gradient(to_bottom,#f3f3f3_1.5px,transparent_1px)] bg-[size:5rem_5rem]"></div>
 
       <Skyline />
 
@@ -137,7 +137,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <p className="w-68 md:w-160 text-left md:text-center place-self-start md:place-self-auto text-neutral-800 md:text-neutral-800 text-shadow-[0px_0px_13px]/30 text-sm md:text-[20px] tracking-tight font-product-semibold py-3 md:p-4 select-none">
+          <p className="w-68 md:w-160 text-left md:text-center place-self-start md:place-self-auto text-neutral-800 md:text-neutral-800  text-sm md:text-[20px] tracking-tight font-product-semibold py-3 md:p-4 select-none">
             {EVENT_CONFIG.text.description}
           </p>
 

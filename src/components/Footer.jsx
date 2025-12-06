@@ -10,9 +10,28 @@ import {
 
 import logo from "../assets/logo.png";
 
+const marqueeItems = Array.from({ length: 6 }, (_, idx) => idx);
+
 const Footer = () => {
+  
   return (
-    <footer className="bg-[#333333] text-white px-6 md:px-20 py-16">
+  <>
+    {/* Footer Marquee */}
+    <div className="relative overflow-hidden border-y-2 border-white mt-10 py-6 lg:py-5">
+      <span className="pointer-events-none absolute inset-y-0  w-full bg-gradient-to-r z-1 from-[#3a3a3a] via-transparent to-[#3a3a3a] h-40" />
+     
+      <div className="footer-marquee-track flex w-max font-product-bold whitespace-nowrap text-white/70 tracking-tight text-3xl sm:text-4xl lg:text-6xl">
+        {[...marqueeItems, ...marqueeItems].map((item, idx) => (
+          <span key={`footer-marquee-${idx}`} className="mx-6 flex items-center gap-2">
+            <span>Google Developer Groups</span>
+            <span className="font-product-regular">Patna</span>
+            <span className="translate-x-5 font-product-regular">&bull;</span>
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <footer className="bg-[#3A3A3A] font-product-regular text-white px-6 md:px-20 py-16">
 
       {/* Top */}
       <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-0">
@@ -23,14 +42,14 @@ const Footer = () => {
           {/* Logo + Title */}
           <div className="flex items-center gap-3">
             <img src={logo} alt="GDG Logo" className="w-12" />
-            <h2 className="text-2xl md:text-3xl font-semibold">
-              Google Developer Groups <span className="font-light">Patna</span>
+            <h2 className="text-2xl font-product-bold md:text-3xl font-semibold">
+              Google Developer Groups <span className="font-product-regular"><span className=" font-product-regular">Patna</span></span>
             </h2>
           </div>
 
           {/* Description */}
           <p className="mt-5 text-lg leading-relaxed text-gray-300">
-            Google Developer Groups Patna is an initiative that brings
+            Google Developer Groups <span className=" font-product-regular">Patna</span> is an initiative that brings
             together developers across Bihar to learn, share knowledge, and
             build with Google technologies.
           </p>
@@ -123,11 +142,23 @@ const Footer = () => {
       {/* Divider */}
       <div className="w-full border-t border-gray-600 mt-12 pt-6">
         <p className="text-center text-gray-400">
-          © Google Developer Groups Patna 2025
+          © Google Developer Groups <span className=" font-product-regular">Patna</span> 2025
         </p>
       </div>
 
     </footer>
+    <style>
+      {`
+      @keyframes footer-marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .footer-marquee-track {
+        animation: footer-marquee 26s linear infinite;
+      }
+      `}
+    </style>
+  </>
   );
 };
 

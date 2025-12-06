@@ -46,6 +46,9 @@ import SushilKumar from "../assets/team/SushilKumar.jpg";
 import NikhilRanjan from "../assets/team/NikhilRanjan.jpg";
 import ObaidullahSadique from "../assets/team/ObaidullahSadique.jpg";
 import AshutoshKumar from "../assets/team/AshutoshKumar.jpg";
+import gdgCircle from '../assets/rounded_circle.svg'
+import arrow from "../assets/arrow.001.png";
+import noiseTexture from '../assets/noiseTexture.png'
 
 
 const teamData = [
@@ -488,30 +491,93 @@ const Teams = () => {
     }
   }, []);
 
+  // Arrow Rotation Logic
+  const arrowRef = useRef(null);
+  const arrowAreaRef = useRef(null);
+  const containerRef = useRef(null);
+  const arrowCenterRef = useRef({ x: 0, y: 0 });
+  const frameRef = useRef(0);
+
+  const updateArrowCenter = () => {
+    if (!arrowRef.current) return;
+    const rect = arrowRef.current.getBoundingClientRect();
+    arrowCenterRef.current = {
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2,
+    };
+  };
+
+  useEffect(() => {
+    updateArrowCenter();
+    window.addEventListener("resize", updateArrowCenter);
+    return () => window.removeEventListener("resize", updateArrowCenter);
+  }, []);
+
+  useEffect(() => {
+    const area = arrowAreaRef.current;
+    if (!area) return;
+
+    const handleMove = (e) => {
+      const { x, y } = arrowCenterRef.current;
+      const angleDeg = Math.atan2(e.clientY - y, e.clientX - x) * (180 / Math.PI);
+
+      if (frameRef.current) cancelAnimationFrame(frameRef.current);
+      frameRef.current = requestAnimationFrame(() => {
+        if (arrowRef.current) {
+          arrowRef.current.style.transform = `rotate(${angleDeg}deg)`;
+        }
+      });
+    };
+
+    const resetRotation = () => {
+      if (arrowRef.current) {
+        arrowRef.current.style.transform = "rotate(0deg)";
+      }
+    };
+
+    area.addEventListener("mousemove", handleMove);
+    area.addEventListener("mouseleave", resetRotation);
+
+    return () => {
+      area.removeEventListener("mousemove", handleMove);
+      area.removeEventListener("mouseleave", resetRotation);
+      if (frameRef.current) cancelAnimationFrame(frameRef.current);
+    };
+  }, []);
+
   return (
-    <div id="team" className="bg-[#F8EFDC] sm:px-5 lg:px-25 ">
-      <div className='border-t-3 border-b-3 border-[#AFAA9F] flex flex-col md:flex-row justify-between items-start'>
+    <div id="team" ref={containerRef} className="bg-[#F8EFDC] mt-1 sm:px-4 px-4 lg:px-25 lg:rounded-t-[5rem] rounded-t-[3rem] overflow-clip font-product-regular">
+      <div className=' border-b-3 border-[#AFAA9F] flex flex-col md:flex-row justify-between items-start'>
         {/* LEFT SIDE */}
         <div
           ref={leftRef}
-          className="w-full pt-0 z-1 md:w-1/3 border-3 border-[#AFAA9F] h-fit border-t-0 sticky top-0 border-b-0"
+          className="w-full pt-0 z-1 md:w-1/3 border-3 duration-300 ease-in-out border-[#AFAA9F] h-fit border-t-0 sticky top-0 border-b-0"
         >
-          <div className='bg-[#F8EFDC] flex justify-center items-center flex-wrap gap-6 pt-2 md:p-6 border-3 border-[#AFAA9F] border-l-0 border-b-3 border-r-0 border-dashed mt-15 md:mt-25 flex-col' >
-            <p className="text-[50px] md:text-[80px] mr-20">Our</p>
-            <p className="rounded-full border-3 border-black text-[50px] md:text-[80px] leading-[0.8] px-10 py-2 rotate-352 -translate-y-11 shadow-[0px_8px_0px_1px_black] bg-[#4285F4] text-white font-bold">
-              Team
+          <div className='bg-[#F8EFDC] flex justify-center items-center flex-wrap gap-6 size- pt-2 md:p-6 border-3 border-[#AFAA9F] border-l-0 border-b-3 border-r-0 border-dashed mt-15 md:mt-25 flex-col' >
+            <p className="text-[50px] md:text-[70px] mr-10 mb-2">Our</p>
+            <p className="rounded-full border-3 border-black text-[50px] md:text-[70px] leading-[0.8] px-10 py-3 -rotate-6 active:rotate-0 hover:rotate-0 duration-200 ease-linear font-product-bold -translate-y-11 shadow-[0px_4px_0px_1px_black] bg-linear-to-b from-blue-600 to-blue-300 text-gray-900 font-bold overflow-hidden">
+              <p className='relative z-1'>Team</p>
+              <img src={noiseTexture} alt="" className="absolute left-0 top-0 z-0 opacity-80 mix-blend-plus-lighter pointer-events-none" />
             </p>
           </div>
           <div className='md:hidden flex h-10 bg-linear-to-t from-transparent to-[#f0eadb]'></div>
 
-          <div className='hidden md:flex w-full border-3 border-[#AFAA9F] border-l-0 border-r-0 mt-10 py-10'>
-            <div className='flex justify-center items-center flex-wrap border-3 border-[#AFAA9F] border-l-0 border-r-0 border-dashed py-15 px-10 text-2xl [word-spacing:10px]'>
-              Hear from industry experts, innovators, and community leaders sharing insights that can elevate your skills and perspective.
+          <div className='hidden md:flex w-full tracki border-3 border-[#AFAA9F] border-l-0 border-r-0 mt-5 py-5'>
+            <div className='flex justify-center text-justify items-center flex-wrap border-3 border-[#AFAA9F] border-l-0 border-r-0 border-dashed py-10 px-10 text-[20px] leading-9'>
+              Meet the people who make DevFest possible, students and professionals working together across teams to create an unforgettable event
             </div>
           </div>
 
-          <div className='hidden md:flex w-full py-10'>
-            <GDGCircular />
+          <div
+            ref={arrowAreaRef}
+            className='hidden md:flex w-full  items-center justify-center py-10 '
+          >
+            {/* <GDGCircular /> */}
+            <img src={gdgCircle} alt="GDG Circular Logo" className="size-80 animate-spin  [animation-duration:6s] "/>
+            <div ref={arrowRef} className='absolute animate-spin-slow'>
+              <img src={arrow} alt="s" className='duration-300 ease-in-out size-40'/>
+
+            </div>
           </div>
         </div>
 
@@ -520,7 +586,7 @@ const Teams = () => {
           className="w-full md:w-[60%] border-3 border-[#AFAA9F] border-t-0 border-b-0 md:pt-25 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-scrollbar-width:0]"
         >
           {/* overall lead */}
-          <p className='w-full border-t-0 md:border-t-3 text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed pt-0 pb-10 md:py-10 border-l-0 border-r-0'>Overall Lead</p>
+          <p className='w-full border-t-0 md:border-t-3 text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed pt-0 pb-10 md:py-10 border-l-0 border-r-0'>Overall Lead</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 border-b-2 border-[#AFAA9F] mb-10'>
             {
               teamData.slice(0, 2).map(data => (
@@ -529,7 +595,7 @@ const Teams = () => {
             }
           </div >
           {/* Team Leads */}
-          <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Team Leads</p>
+          <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Team Leads</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 border-b-2 border-[#AFAA9F] mb-10'>
             {
               teamData.slice(2, 15).map(data => (
@@ -538,7 +604,7 @@ const Teams = () => {
             }
           </div >
           {/* Technical Team */}
-          <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Technical Team</p>
+          <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Technical Team</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
               teamData.slice(15, 22).map((data) => (
@@ -547,7 +613,7 @@ const Teams = () => {
             }
           </div >
            {/* Operation & Management */}
-          <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Operation & Management</p>
+          <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Operation & Management</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
               teamData.slice(22, 26).map((data) => (
@@ -556,7 +622,7 @@ const Teams = () => {
             }
           </div >
           {/* Content Creation */}
-          <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Content Creation</p>
+          <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Content Creation</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
               teamData.slice(26, 28).map((data) => (
@@ -565,7 +631,7 @@ const Teams = () => {
             }
           </div >
           {/* Network & Outreach */}
-          <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Network & Outreach</p>
+          <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Network & Outreach</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
               teamData.slice(28, 31).map((data) => (
@@ -574,7 +640,7 @@ const Teams = () => {
             }
           </div >
           {/* Photography & Videography */}
-          <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Photography & Videography</p>
+          <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Photography & Videography</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
               teamData.slice(31, 39).map((data) => (
@@ -583,7 +649,7 @@ const Teams = () => {
             }
           </div >
           {/* Design Team */}
-          <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Design Team</p>
+          <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Design Team</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
               teamData.slice(39, 42).map((data) => (
@@ -592,7 +658,7 @@ const Teams = () => {
             }
           </div >
           {/* Social Media Management*/}
-          <p className='w-full text-center text-5xl font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Social Media Management</p>
+          <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Social Media Management</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
               teamData.slice(42, 44).map((data) => (
