@@ -42,12 +42,13 @@ const Card = ({ size = "l", data}) => {
         ${colorClass}
         border-2 border-[#5A5F65] shadow-lg text-white font-bold
         flex flex-col overflow-hidden p-2 gap-1
+        hover:-rotate-3 duration-300 ease-in-out hover:scale-105
       `}>
 
       {/* Image wrapper with gradient border */}
       <div className="p-0.5 rounded-lg">
         <div
-          className={`w-full aspect-square rounded-md bg-center bg-cover border-2 ${borderColorClass} ${shadowColorClass}`}
+          className={`w-full aspect-square rounded-xl bg-center bg-cover border-2 ${borderColorClass} ${shadowColorClass}`}
           style={{
             backgroundImage: `url(${data.img})`,
             boxShadow: `${borderColorClass} 0px 3px 0px 1px`,
@@ -63,7 +64,7 @@ const Card = ({ size = "l", data}) => {
           <p className="text-xs opacity-80 font-medium mt-1 z-0">{data.role}</p>
 
           {data.desc && (
-            <p className={`${size == "l" ? "text-[12px]" : "text-[10px]"} opacity-90 mt-2 leading-snug mr-4`}>{data.desc}</p>
+            <p className={`${size == "l" ? "text-[14px]" : "text-[12px]"} opacity-90 mt-2 leading-snug mr-4`}>{data.desc}</p>
           )}
         </div>
 

@@ -363,10 +363,10 @@ const Badge = () => {
     }, [image, name, frameShape]);
 
     return (
-        <div className="min-h-screen bg-gray-50 pt-28 py-12 px-4 sm:px-6 lg:px-8 font-sans">
+        <div className="min-h-screen font-product-regular bg-gray-50 pt-28 py-12 px-4 sm:px-6 lg:px-8 font-sans">
             <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-12">
-                    <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl mb-4">
+                    <h1 className="text-4xl font-product-black text-gray-900 sm:text-5xl mb-4">
                         Get Your <span className="text-blue-600">DevFest</span> Badge
                     </h1>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
