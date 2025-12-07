@@ -47,6 +47,7 @@ import NikhilRanjan from "../assets/team/NikhilRanjan.jpg";
 import ObaidullahSadique from "../assets/team/ObaidullahSadique.jpg";
 import AshutoshKumar from "../assets/team/AshutoshKumar.jpg";
 import PranavRaj from "../assets/team/PranavRaj.jpg";
+import Sujeetkumar from "../assets/team/Sujeetkumar.jpg";
 import gdgCircle from '../assets/rounded_circle.svg'
 import arrow from "../assets/arrow.001.png";
 import noiseTexture from '../assets/noiseTexture.png'
@@ -392,12 +393,13 @@ const teamData = [
   },
   {
     id: 34,
+    img: Sujeetkumar,
     name: "Sujeet Kumar",
     role: "Video Production",
     bgi: "/images/team20.jpg",
     color: 1,
     linkedin: "https://www.linkedin.com/in/sujeet-kumar-1521a2260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    
+    instagram: "https://www.instagram.com/sujeetx_2002?igsh=YmsxdzI4a3hzOXRm",
   },
   {
     id: 35,
