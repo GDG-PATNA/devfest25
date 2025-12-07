@@ -46,6 +46,7 @@ import SushilKumar from "../assets/team/SushilKumar.jpg";
 import NikhilRanjan from "../assets/team/NikhilRanjan.jpg";
 import ObaidullahSadique from "../assets/team/ObaidullahSadique.jpg";
 import AshutoshKumar from "../assets/team/AshutoshKumar.jpg";
+import PranavRaj from "../assets/team/PranavRaj.jpg";
 import gdgCircle from '../assets/rounded_circle.svg'
 import arrow from "../assets/arrow.001.png";
 import noiseTexture from '../assets/noiseTexture.png'
@@ -363,7 +364,7 @@ const teamData = [
   {
     id: 31,
     img: SushilKumar,
-    name: "Sushil Kumar",
+    name: "Shushil Kumar",
     role: "Photography",
     bgi: "/images/team20.jpg",
     color: 2,
@@ -372,12 +373,13 @@ const teamData = [
   },
   {
     id: 32,
+    img: PranavRaj,
     name: "Pranav Raj",
     role: "Photography",
     bgi: "/images/team20.jpg",
     color: 3,
-    linkedin: "",
-   
+    linkedin: "https://www.linkedin.com/in/pranav-raj910?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    instagram: "https://www.instagram.com/its.raj910?igsh=Mm5sc2JreGR4a2h0",
   },
   {
     id: 33,
