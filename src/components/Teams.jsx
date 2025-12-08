@@ -46,7 +46,7 @@ import NikhilRanjan from "../assets/team/NikhilRanjan.jpg";
 import ObaidullahSadique from "../assets/team/ObaidullahSadique.jpg";
 import AshutoshKumar from "../assets/team/AshutoshKumar.jpg";
 import PranavRaj from "../assets/team/PranavRaj.jpg";
-import Sujeetkumar from "../assets/team/Sujeetkumar.jpg";
+import Sujeetkumar from "../assets/team/SujeetKumar.jpg";
 import gdgCircle from '../assets/rounded_circle.svg'
 import arrow from "../assets/arrow.001.png";
 import noiseTexture from '../assets/noiseTexture.png'
