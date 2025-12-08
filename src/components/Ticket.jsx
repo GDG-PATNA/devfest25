@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function getTimeLeft() {
-  const endDate = new Date(2025, 11, 8, 23, 59, 59); // 8 Dec 2025, local time
+  const endDate = new Date(2025, 11, 10, 23, 59, 59); // 8 Dec 2025, local time
   const now = new Date();
   const diff = endDate - now;
 
@@ -58,7 +58,7 @@ export default function Ticket() {
               Early Bird sale has ended. Regular tickets may still be available.
             </div>
           ) : (
-            <div className="inline-flex items-stretch gap-2 sm:gap-3 px-3 py-2 sm:px-4 sm:py-3 bg-white rounded-full border-2 border-black shadow-[3px_3px_0_0_rgba(0,0,0,1)] animate-[pulse_2.4s_ease-in-out_infinite]">
+            <div className="inline-flex items-stretch gap-2 sm:gap-3 px-3 py-2 sm:px-4 sm:py-3 bg-white text-[#B91C1C] rounded-full border-2 border-black shadow-[3px_3px_0_0_rgba(0,0,0,1)] animate-[pulse_2.4s_ease-in-out_infinite]">
               {[
                 { label: "Days", value: timeLeft.days },
                 { label: "Hours", value: timeLeft.hours },
@@ -82,9 +82,9 @@ export default function Ticket() {
 
           <div className="relative w-full mt-1 flex flex-col items-center">
             <p className="text-[10px] sm:text-xs text-[#6B7280] text-center w-full">
-              Early Bird valid till{" "}
+              Early Bird Offer Extended till{" "}
               <span className="font-semibold text-[#111827]">
-                8 Dec 2025, 11:59 PM
+                10 Dec 2025, 11:59 PM
               </span>
             </p>
 
