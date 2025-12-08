@@ -8,7 +8,7 @@ import BarkhaAgarwal from "../assets/team/BarkhaAgarwal.jpeg";
 import AmikarAnanya from "../assets/team/Amikar.jpg";
 import MohammadZaidKhan from "../assets/team/Zaid.jpg";
 // import AshishKumar from "../assets/team/AshishKumar.jpg";
-// import shivi from "../assets/team/shivi.jpeg" ;
+// import shivi from "../assets/team/shivi.jpeg" ; 
 import siddharthaRoy from "../assets/team/siddharthaRoy.jpg";
 import rohanRaj from "../assets/team/rohanRaj.jpg";
 import nameeraAhmad from "../assets/team/nameeraAhmad.jpeg";
