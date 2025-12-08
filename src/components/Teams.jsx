@@ -21,7 +21,6 @@ import vishalKumar from "../assets/team/VishalKumar.jpg";
 import ayushRoy from "../assets/team/ayushRoy.jpeg";
 // import ayushKumar from "../assets/team/ayushKumar.jpg";
 import Nishant from "../assets/team/Nishant.jpg";
-// import AnjaliDipti from "../assets/team/AnjaliDipti.jpg";
 import ShivangiGupta from "../assets/team/Shivangi.jpg";
 import kunalSinha from "../assets/team/KunalSinha.jpg";
 import SunnyKumar from "../assets/team/SunnyKumar.jpg";
