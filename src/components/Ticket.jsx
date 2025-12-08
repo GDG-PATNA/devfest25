@@ -58,7 +58,7 @@ export default function Ticket() {
               Early Bird sale has ended. Regular tickets may still be available.
             </div>
           ) : (
-            <div className="inline-flex items-stretch gap-2 sm:gap-3 px-3 py-2 sm:px-4 sm:py-3 bg-white text-[#B91C1C] rounded-full border-2 border-black shadow-[3px_3px_0_0_rgba(0,0,0,1)] animate-[pulse_2.4s_ease-in-out_infinite]">
+            <div className="inline-flex items-stretch gap-2 sm:gap-3 px-3 py-2 sm:px-4 sm:py-3 bg-white rounded-full border-2 border-black shadow-[3px_3px_0_0_rgba(0,0,0,1)] animate-[pulse_2.4s_ease-in-out_infinite]">
               {[
                 { label: "Days", value: timeLeft.days },
                 { label: "Hours", value: timeLeft.hours },
@@ -69,10 +69,10 @@ export default function Ticket() {
                   key={item.label}
                   className="flex flex-col items-center min-w-[52px]"
                 >
-                  <span className="text-sm sm:text-base font-extrabold text-[#111827] leading-none">
+                  <span className="text-sm sm:text-base font-extrabold text-[#B91C1C] leading-none">
                     {formatNumber(item.value)}
                   </span>
-                  <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-[#6B7280]">
+                  <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-[#bb5e5e]">
                     {item.label}
                   </span>
                 </div>
