@@ -5,8 +5,8 @@ import audienceImage from "../../assets/audience.png";
 export default function About() {
   return (
     <>
-      <div id="aboutDevFest" className="lg:h-screen w-full flex px-4 md:px-32 bg-[#F7EEDC] lg:rounded-b-[5rem] rounded-b-[3rem] h-full overflow-hidden">
-        <div className="container relative  border-l-3 border-r-3  border-gray-500/50">
+      <div id="aboutDevFest" className="lg:h-screen w- flex px-4 md:px-32 bg-[#F7EEDC] lg:rounded-b-[5rem] rounded-b-[3rem] h-full overflow-hidden">
+        <div className=" relative  border-l-3 border-r-3  border-gray-500/50">
           <div className="flex flex-col lg:flex-row lg:gap-20 border-t-3 border-gray-500/50 items-center justify-center  lg:px-6 lg:justify-between h-full w-full py-20 lg:py-0">
             <div
               id="left"

@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 import WhatToExpect from "../components/WhatToExpect";
 import Ticket from "../components/Ticket";
 import { RotateCcw } from "lucide-react";
+import AiImpactSummit from "../components/promotions/AiImpactSummit";
 
 export default function Home() {
   const [isLandscapeMobile, setIsLandscapeMobile] = useState(false);
@@ -46,6 +47,9 @@ export default function Home() {
       <Hero />
 
       <div className="bg-[#3A3A3A]">
+        <section id ="ai-impact-summit">
+          <AiImpactSummit />
+        </section>
         <section id="ticket">
           <Ticket />
         </section>
