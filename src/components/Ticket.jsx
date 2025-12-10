@@ -36,9 +36,9 @@ export default function Ticket() {
   return (
     <section
       id="tickets"
-      className="w-full  h-screen px-4 md:px-32  bg-[#F7EEDC] "
+      className="w-full  h-fit  px-4 md:px-32  bg-[#F7EEDC] "
     >
-      <div className="flex border-l-3 border-r-3   border-gray-500/50 items-center justify-center w-full h-full">
+      <div className="flex border-l-3 border-r-3 py-10  border-gray-500/50 items-center justify-center w-full h-full">
       <div className="w-full max-w-4xl">
         {/* Heading */}
         <div className="text-center mb-6 sm:mb-8">

@@ -55,11 +55,11 @@ const Faqs = () => {
             </h2>
 
             <div className="mt-3 inline-block">
-              <span className="inline-block font-product-bold bg-linear-to-b from-yellow-600 to-yellow-200 border-[3px] border-black rounded-full px-6 py-3 text-[30px] md:text-[45px]  shadow-[0_5px_0_rgba(0,0,0,0.85)] overflow-hidden hover:rotate-0 active:rotate-0 duration-300 ease-in-out rotate-[-6deg]">
+              <span className="inline-block font-product-bold bg-linear-to-b from-yellow-600 to-yellow-200 border-[3px] border-black rounded-full px-6 py-2 text-[30px] md:text-[45px]  shadow-[0_5px_0_rgba(0,0,0,0.85)] overflow-hidden rotate-[-6deg]">
+                <img src={noiseTexture} alt="" className="absolute left-0 top-0 opacity-80 mix-blend-plus-lighter pointer-events-none" />
                 <p className="select-none font-product-black relative z-1 text-gray-900">
                 Questions
                 </p>
-                <img src={noiseTexture} alt="" className="absolute left-0 top-0 z-0 opacity-80 mix-blend-plus-lighter pointer-events-none" />
               </span>
             </div>
           </div>
