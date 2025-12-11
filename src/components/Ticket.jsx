@@ -49,9 +49,9 @@ export default function Ticket() {
 
         {/* Timer */}
         <div className="mb-6 sm:mb-8 font-product-bold flex flex-col items-center gap-3">
-          <p className="text-[11px] sm:text-xs font-semibold tracking-[0.16em] uppercase text-[#6B7280]">
+          {/* <p className="text-[11px] sm:text-xs font-semibold tracking-[0.16em] uppercase text-[#6B7280]">
             Early Bird Ticket Sale Ends In:
-          </p>
+          </p> */}
 
           {timeLeft.expired ? (
             <div className="px-4 py-2 rounded-full bg-white border-2 border-black text-xs sm:text-sm font-semibold text-[#B91C1C] shadow-[2px_2px_0_0_rgba(0,0,0,1)]">
@@ -80,7 +80,7 @@ export default function Ticket() {
             </div>
           )}
 
-          <div className="relative w-full mt-1 flex flex-col items-center">
+          {/* <div className="relative w-full mt-1 flex flex-col items-center">
             <p className="text-[10px] sm:text-xs text-[#6B7280] text-center w-full">
               Early Bird Offer Extended till{" "}
               <span className="font-semibold text-[#111827]">
@@ -95,7 +95,7 @@ export default function Ticket() {
             >
               *Read Ticket Guidelines
             </Link>
-          </div>
+          </div> */}
         </div>
 
         {/* Ticket widget – focus area */}
