@@ -47,6 +47,8 @@ import ObaidullahSadique from "../assets/team/ObaidullahSadique.jpg";
 import AshutoshKumar from "../assets/team/AshutoshKumar.jpg";
 import PranavRaj from "../assets/team/PranavRaj.jpg";
 import Sujeetkumar from "../assets/team/SujeetKumar.jpg";
+import AmanGupta from "../assets/team/AmanGupta.jpg";
+import AnjaliKumari from "../assets/team/AnjaliKumari.jpg";
 import gdgCircle from '../assets/rounded_circle.svg'
 import arrow from "../assets/arrow.001.png";
 import noiseTexture from '../assets/noiseTexture.png'
@@ -412,14 +414,13 @@ const teamData = [
   },
   {
     id: 36,
+    img: AmanGupta,
     name: "Aman Gupta",
     role: "Video Production",
     bgi: "/images/team20.jpg",
     color: 3,
-    linkedin: "https://www.linkedin.com/in/aman-gupta-212288322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-    github: null,
-    twitter: "https://twitter.com/aisha",
-    instagram: null
+    linkedin: "https://in.linkedin.com/in/aman-gupta-212288322",
+    instagram: "https://www.instagram.com/amangupta01rs?igsh=aDdkYjJ0MG40OHA4&utm_source=qr",
   },
   {
     id: 44,
@@ -430,6 +431,24 @@ const teamData = [
     color: 4,
     linkedin: "https://www.linkedin.com/in/obaidullah-sadique-29ab02285?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     instagram: "https://www.instagram.com/sadique_11?igsh=dTcwcXQ1bmZ1d3A1",
+  },
+  {
+    id: 45,
+    // img: ObaidullahSadique,
+    name: "Adnan Fraz",
+    role: "Photography & Videography",
+    bgi: "/images/team20.jpg",
+    color: 1,
+    linkedin: "https://linkedin.com/in/adnan-fraz/",
+  },
+  {
+    id: 46,
+    img: AnjaliKumari,
+    name: "Anjali Kumari",
+    role: "Photography & Videography",
+    bgi: "/images/team20.jpg",
+    color: 2,
+    linkedin: "https://www.linkedin.com/in/anjali32007?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     id: 37,
@@ -646,7 +665,7 @@ const Teams = () => {
           <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Photography & Videography</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(31, 39).map((data) => (
+              teamData.slice(31, 41).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
@@ -655,7 +674,7 @@ const Teams = () => {
           <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Design Team</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(39, 42).map((data) => (
+              teamData.slice(41, 44).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
@@ -664,7 +683,7 @@ const Teams = () => {
           <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Social Media Management</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(42, 44).map((data) => (
+              teamData.slice(44, 46).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
