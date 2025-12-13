@@ -333,16 +333,6 @@ const teamData = [
     linkedin: "https://www.linkedin.com/in/rohanraj8467/",
   },
   {
-    id: 28,
-    img: VikashKumar,
-    name: "Vikash Kumar",
-    role: "Network & Outreach",
-    bgi: "/images/team20.jpg",
-    color: 2,
-    linkedin: "https://www.linkedin.com/in/vikash-kumar-619538258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    instagram: "https://www.instagram.com/vikash__95_?igsh=MXZyZjEzajgxYWo0Mg==",
-  },
-  {
     id: 29,
     img: AshutoshKumar,
     name: "Ashutosh Kumar",
