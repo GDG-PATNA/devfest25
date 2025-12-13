@@ -49,6 +49,7 @@ import PranavRaj from "../assets/team/PranavRaj.jpg";
 import Sujeetkumar from "../assets/team/SujeetKumar.jpg";
 import AmanGupta from "../assets/team/AmanGupta.jpg";
 import AnjaliKumari from "../assets/team/AnjaliKumari.jpg";
+import AdnanFraz from "../assets/team/AdnanFraz.jpg";
 import gdgCircle from '../assets/rounded_circle.svg'
 import arrow from "../assets/arrow.001.png";
 import noiseTexture from '../assets/noiseTexture.png'
@@ -434,7 +435,7 @@ const teamData = [
   },
   {
     id: 45,
-    // img: ObaidullahSadique,
+    img: AdnanFraz,
     name: "Adnan Fraz",
     role: "Photography & Videography",
     bgi: "/images/team20.jpg",
@@ -489,16 +490,6 @@ const teamData = [
     color: 1,
     linkedin: "https://www.linkedin.com/in/riya-kumari-19ab0836b/",
     
-  },
-    {
-    id: 41,
-    img: NigamKumar,
-    name: "Nigam Kumar",
-    role: "Social Media Management",
-    bgi: "/images/team20.jpg",
-    color: 2,
-    linkedin: "https://www.linkedin.com/in/nigam-kumar-b78a4b286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    instagram: "https://www.instagram.com/nigam_kumarsingh?igsh=cDNzZXZnYmF5aTZ6",
   }
 ];
 
