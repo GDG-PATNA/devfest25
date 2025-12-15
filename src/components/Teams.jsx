@@ -4,11 +4,8 @@ import GDGCircular from './circularlogo/GDGCircular';
 import { useRef, useEffect, useState } from 'react';
 import AnuragVerma from "../assets/team/AnuragVerma.jpeg";
 import BarkhaAgarwal from "../assets/team/BarkhaAgarwal.jpeg";
-// import HarshKapoor from "../assets/team/HarshKapoor.jpg";
 import AmikarAnanya from "../assets/team/Amikar.jpg";
 import MohammadZaidKhan from "../assets/team/Zaid.jpg";
-// import AshishKumar from "../assets/team/AshishKumar.jpg";
-// import shivi from "../assets/team/shivi.jpeg" ; 
 import siddharthaRoy from "../assets/team/siddharthaRoy.jpg";
 import rohanRaj from "../assets/team/rohanRaj.jpg";
 import nameeraAhmad from "../assets/team/nameeraAhmad.jpeg";
@@ -19,7 +16,6 @@ import SumanPrakash from "../assets/team/Sumanprakash.jpg";
 import mdAlkama from "../assets/team/mdAlkama.jpeg";
 import vishalKumar from "../assets/team/VishalKumar.jpg";
 import ayushRoy from "../assets/team/ayushRoy.jpeg";
-// import ayushKumar from "../assets/team/ayushKumar.jpg";
 import Nishant from "../assets/team/Nishant.jpg";
 import ShivangiGupta from "../assets/team/Shivangi.jpg";
 import kunalSinha from "../assets/team/KunalSinha.jpg";
@@ -30,9 +26,9 @@ import NikhilRaj from "../assets/team/NikhilRaj.jpg";
 import ShivamKumar from "../assets/team/ShivamKumar.jpg";
 import TanyaGupta from "../assets/team/tanyaGupta.jpg";
 import HarshRaj from "../assets/team/HarshRaj.jpg";
-import VikashKumar from "../assets/team/VikashKumar.jpg";
+//import VikashKumar from "../assets/team/VikashKumar.jpg";
 import TanyaJha from "../assets/team/TanyaJha.jpg";
-import NigamKumar from "../assets/team/NigamKumar.jpg";
+//import NigamKumar from "../assets/team/NigamKumar.jpg";
 import Keshvisri from "../assets/team/Keshvisri.jpg";
 import RiyaKumari from "../assets/team/RiyaKumari.jpg";
 import RajkantKumar from "../assets/team/RajkantKumar.jpg";
@@ -336,16 +332,6 @@ const teamData = [
     linkedin: "https://www.linkedin.com/in/rohanraj8467/",
   },
   {
-    id: 28,
-    img: VikashKumar,
-    name: "Vikash Kumar",
-    role: "Network & Outreach",
-    bgi: "/images/team20.jpg",
-    color: 2,
-    linkedin: "https://www.linkedin.com/in/vikash-kumar-619538258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    instagram: "https://www.instagram.com/vikash__95_?igsh=MXZyZjEzajgxYWo0Mg==",
-  },
-  {
     id: 29,
     img: AshutoshKumar,
     name: "Ashutosh Kumar",
@@ -647,7 +633,7 @@ const Teams = () => {
           <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Network & Outreach</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(28, 31).map((data) => (
+              teamData.slice(28, 30).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
@@ -656,7 +642,7 @@ const Teams = () => {
           <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Photography & Videography</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(31, 41).map((data) => (
+              teamData.slice(30, 40).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
@@ -665,7 +651,7 @@ const Teams = () => {
           <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Design Team</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(41, 44).map((data) => (
+              teamData.slice(40, 43).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
@@ -674,7 +660,7 @@ const Teams = () => {
           <p className='w-full text-center text-4xl prociono-regular font-bold border-3 border-[#AFAA9F] border-dashed py-10 border-l-0 border-r-0'>Social Media Management</p>
           <div className='flex justify-evenly items-center flex-wrap gap-6 p-6 pb-10 '>
             {
-              teamData.slice(44, 46).map((data) => (
+              teamData.slice(43, 46).map((data) => (
                 <Card key={data.id} size="m" data={data} color={data.id % 4} />
               ))
             }
