@@ -10,7 +10,7 @@ import WhatToExpect from "../components/WhatToExpect";
 import Ticket from "../components/Ticket";
 import { RotateCcw } from "lucide-react";
 import AiImpactSummit from "../components/promotions/AiImpactSummit";
-import Sponsors from "../components/Sponsers";
+import Sponsors from "../components/Sponsors";
 
 export default function Home() {
   const [isLandscapeMobile, setIsLandscapeMobile] = useState(false);
@@ -64,9 +64,9 @@ export default function Home() {
         </section>
 
         
-         {/* <section id="sponsors"> 
+        <section id="sponsors"> 
           <Sponsors/>
-        </section> */}
+        </section>
 
         <section id="team">
           <Team />
