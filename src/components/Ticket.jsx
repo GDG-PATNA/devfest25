@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function getTimeLeft() {
-  const endDate = new Date(2025, 11, 18, 23, 59, 59); // 8 Dec 2025, local time
+  const endDate = new Date(2025, 11, 20, 23, 59, 59); // 8 Dec 2025, local time
   const now = new Date();
   const diff = endDate - now;
 
