@@ -84,7 +84,7 @@ export default function Ticket() {
             <p className="text-[10px] sm:text-xs text-[#6B7280] text-center w-full">
               Tickets sale Extended till{" "}
               <span className="font-semibold text-[#111827]">
-                18 Dec 2025, 11:59 PM
+                20 Dec 2025, 11:59 PM
               </span>
             </p>
 
