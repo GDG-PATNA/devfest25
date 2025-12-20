@@ -3,6 +3,8 @@ import { FiGithub } from "react-icons/fi";
 import { CiTwitter } from "react-icons/ci";
 import { FiLinkedin } from "react-icons/fi";
 import { FaInstagram } from "react-icons/fa";
+import { IoGlobeOutline } from "react-icons/io5";
+
 
 
 const Card = ({ size = "l", data}) => {
@@ -68,7 +70,14 @@ const Card = ({ size = "l", data}) => {
           )}
         </div>
 
+
+
         <div className={`h-full flex ${size == "l" ? "gap-4" : "gap-2"} flex-col items-center justify-center text-white text-lg`}>
+          {data.website &&
+            <a target="_blank" href={data.website}>
+              <IoGlobeOutline className={`${size == 'l' ? "text-3xl" : ""}`} />
+            </a>
+          }
           {data.linkedin &&
             <a target="_blank" href={data.linkedin}>
               <FiLinkedin className={`${size == 'l' ? "text-3xl" : ""}`} />
