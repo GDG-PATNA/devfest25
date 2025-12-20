@@ -125,7 +125,7 @@ const Teams = () => {
   }, []);
 
   return (
-    <div id="team" ref={containerRef} className="bg-[#F8EFDC] mt-1 sm:px-4 px-4 lg:px-25 lg:rounded-[5rem] rounded-[3rem] overflow-clip font-product-regular">
+    <div id="speakers" ref={containerRef} className="bg-[#F8EFDC] mt-1 sm:px-4 px-4 lg:px-25 lg:rounded-[5rem] rounded-[3rem] overflow-clip font-product-regular">
       <div className=' border-[#AFAA9F] flex flex-col md:flex-row justify-between items-start'>
         {/* LEFT SIDE */}
         <div
