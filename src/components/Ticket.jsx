@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function getTimeLeft() {
-  const endDate = new Date(2025, 11, 20, 23, 59, 59); // 8 Dec 2025, local time
+  const endDate = new Date(2025, 11, 23, 23, 59, 59); // 23 Dec 2025, local time
   const now = new Date();
   const diff = endDate - now;
 
@@ -50,12 +50,12 @@ export default function Ticket() {
         {/* Timer */}
         <div className="mb-6 sm:mb-8 font-product-bold flex flex-col items-center gap-3">
           <p className="text-[11px] sm:text-xs font-semibold tracking-[0.16em] uppercase text-[#6B7280]">
-            Regular tickets Sale Ends In:
+            Late Bird tickets Sale Ends In:
           </p>
 
           {timeLeft.expired ? (
             <div className="px-4 py-2 rounded-full bg-white border-2 border-black text-xs sm:text-sm font-semibold text-[#B91C1C] shadow-[2px_2px_0_0_rgba(0,0,0,1)]">
-              Regular tickets sale has ended.
+              tickets sale has ended.
             </div>
           ) : (
             <div className="inline-flex items-stretch gap-2 sm:gap-3 px-3 py-2 sm:px-4 sm:py-3 bg-white rounded-full border-2 border-black shadow-[3px_3px_0_0_rgba(0,0,0,1)] animate-[pulse_2.4s_ease-in-out_infinite]">
@@ -84,7 +84,7 @@ export default function Ticket() {
             <p className="text-[10px] sm:text-xs text-[#6B7280] text-center w-full">
               Tickets sale Extended till{" "}
               <span className="font-semibold text-[#111827]">
-                20 Dec 2025, 11:59 PM
+                23 Dec 2025, 11:59 PM
               </span>
             </p>
 
@@ -103,7 +103,7 @@ export default function Ticket() {
           <iframe
             className="w-full rounded-2xl border-2 border-black"
             style={{ boxShadow: "3px 3px 0px 0px black" }}
-            src="https://konfhub.com/widget/devfest-patna-25?desc=true&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=68158%2C68159&ticketId=68158%7C%3B68159%7C"
+            src="https://konfhub.com/widget/devfest-patna-25?desc=true&secondaryBg=F7F7F7&ticketBg=F7F7F7&borderCl=F7F7F7&bg=FFFFFF&fontColor=1e1f24&ticketCl=1e1f24&btnColor=002E6E&fontFamily=Hind&borderRadius=10&widget_type=standard&tickets=69352&ticketId=69352%7C1%22"
             id="konfhub-widget"
             title="Register for DevFest Patna 2025 by Google Developer Groups Patna"
             width="100%"
