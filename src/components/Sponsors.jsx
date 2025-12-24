@@ -8,7 +8,7 @@ const sponsors = [
   {
     id: 0,
     img: ism,
-    link: "https://www.ism.edu",
+    link: "https://www.ismpatna.ac.in",
     type: "gold",
   },
   {
