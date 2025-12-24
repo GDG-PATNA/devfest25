@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function getTimeLeft() {
-  const endDate = new Date(2025, 11, 23, 23, 59, 59); // 23 Dec 2025, local time
+  const endDate = new Date(2025, 11, 25, 23, 59, 59); // 23 Dec 2025, local time
   const now = new Date();
   const diff = endDate - now;
 
@@ -84,7 +84,7 @@ export default function Ticket() {
             <p className="text-[10px] sm:text-xs text-[#6B7280] text-center w-full">
               Tickets sale Extended till{" "}
               <span className="font-semibold text-[#111827]">
-                23 Dec 2025, 11:59 PM
+                25 Dec 2025, 11:59 PM
               </span>
             </p>
 
