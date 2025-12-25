@@ -15,10 +15,10 @@ const Menu = [
   { "title": "About DevFest", "url": "/#aboutDevFest" },
   { "title": "Speakers", "url": "/#speakers" },
   { "title": "Sponsors", "url": "/#sponsors" },
-  { "title": "Partners", "url": "/partners" },
-  { "title": "Get Badge", "url": "/badge" },
   { "title": "Team", "url": "/#team" },
-  { "title": "FAQ", "url": "/#faq" }
+  { "title": "FAQ", "url": "/#faq" },
+  { "title": "Partners", "url": "/partners" },
+  { "title": "Get Badge", "url": "/badge" }
 ];
 
 export default function Nav() {
