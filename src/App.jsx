@@ -8,20 +8,8 @@ import Home from "./pages/Home";   // ⬅️ NEW
 import Guidelines from "./pages/Guidelines";
 import Badge from "./pages/Badge";
 import NotFound from "./pages/NotFound";
-// import Partners from "./pages/Partners";
-// import Agenda from "./pages/Agenda";
+import Partners from "./pages/Partners";
 
-const Placeholder = ({ name, id }) => (
-  <div
-    id={id}
-    className="min-h-[50vh] flex items-center justify-center border-t border-black bg-gray-50"
-  >
-    <h2 className="text-4xl font-bold text-gray-300">{name} Coming Soon</h2>
-  </div>
-);
-
-const Partners = () => <Placeholder name="Partners" id="partners" />;
-const Agenda = () => <Placeholder name="Agenda" id="agenda" />;
 
 export default function App() {
   const location = useLocation();
@@ -54,7 +42,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/partners" element={<Partners />} />
-        <Route path="/agenda" element={<Agenda />} />
         <Route path="/badge" element={<Badge />} />
         <Route path="/guideline" element={<Guidelines />} />
         <Route path="/*" element={<NotFound />} />

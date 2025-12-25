@@ -54,18 +54,10 @@ src/
 │── main.jsx
 ```
 
-### 🔥 **Recently Added**
-
-* ✔ Extracted home sections into **Home.jsx**
-* ✔ Cleaner routing in **App.jsx**
-* ✔ Added **Custom 404 NotFound** page
-* ✔ Updated import paths
-* ✔ Polished folder structure
-
 ---
 
 # 🔗 **Live Website**
-[https://devfest.gdgpatna.in](https://devfest.gdgpatna.in)
+[https://devfest.gdgpatna.com](https://devfest.gdgpatna.com)
 
 ---
 
@@ -76,8 +68,7 @@ src/
 | `/`          | Homepage         |
 | `/guideline` | Event guidelines |
 | `/badge`     | Badge generator  |
-| `/partners`  | Coming soon page |
-| `/agenda`    | Coming soon page |
+| `/partners`  | Event partners   |
 | `*`          | Custom 404 page  |
 
 ---
@@ -135,7 +126,7 @@ npm run build
 
 Upload the `/dist` folder or connect GitHub repo.
 
----
+---90
 
 # 🧪 How to Test
 
