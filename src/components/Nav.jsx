@@ -13,6 +13,7 @@ import { HashLink as Link } from "react-router-hash-link/dist/react-router-hash-
 const Menu = [
   { "title": "Home", "url": "/#home" },
   { "title": "About DevFest", "url": "/#aboutDevFest" },
+  { "title": "Agenda", "url": "/agenda" },
   { "title": "Speakers", "url": "/#speakers" },
   { "title": "Sponsors", "url": "/#sponsors" },
   { "title": "Team", "url": "/#team" },
