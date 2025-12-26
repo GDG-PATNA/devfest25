@@ -9,6 +9,8 @@ import Guidelines from "./pages/Guidelines";
 import Badge from "./pages/Badge";
 import NotFound from "./pages/NotFound";
 import Partners from "./pages/Partners";
+import Certificate from "./pages/Certificate";
+import VerifyCertificate from "./pages/VerifyCertificate";
 
 
 export default function App() {
@@ -44,6 +46,8 @@ export default function App() {
         <Route path="/partners" element={<Partners />} />
         <Route path="/badge" element={<Badge />} />
         <Route path="/guideline" element={<Guidelines />} />
+        <Route path="/certificate" element={<Certificate />} />
+        <Route path="/certificate/:bookingId" element={<VerifyCertificate />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </>

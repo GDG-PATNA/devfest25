@@ -11,6 +11,8 @@ import AprajitaVerma from '../assets/team/AprajitaVerma.jpeg'
 import OmPrakash from '../assets/team/OmPrakash.jpg'
 import VivekYadav from '../assets/team/VivekYadav.jpg'
 import RajeshRanjan from '../assets/team/RajeshRanjan.png'
+import ChandanTiwari from '../assets/team/ChandanTiwari.jpg'
+import KumarSaurabh from '../assets/team/KumarSaurabh.png'
 
 
 
@@ -56,6 +58,24 @@ const teamData = [
     bgi: "/images/team5.jpg",
     linkedin: "https://www.linkedin.com/in/rraajjeesshhr/",
     color: 1,
+  },
+    {
+    id: 6,
+    img: ChandanTiwari,
+    name: "Chandan Tiwari",
+    role: "Serial Entrepreneur",
+    bgi: "/images/team5.jpg",
+    linkedin: "https://www.linkedin.com/in/asalesguy/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    color: 2,
+  },
+    {
+    id: 7,
+    img: KumarSaurabh,
+    name: "Kumar Saurabh",
+    role: "Startup Evangelist",
+    bgi: "/images/team5.jpg",
+    linkedin: "https://www.linkedin.com/in/kumarsaurabh08/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    color: 3,
   },
 ];
 

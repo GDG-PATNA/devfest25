@@ -18,7 +18,8 @@ const Menu = [
   { "title": "Team", "url": "/#team" },
   { "title": "FAQ", "url": "/#faq" },
   { "title": "Partners", "url": "/partners" },
-  { "title": "Get Badge", "url": "/badge" }
+  { "title": "Get Badge", "url": "/badge" },
+  { "title": "Certificate", "url": "/certificate" }
 ];
 
 export default function Nav() {
