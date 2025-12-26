@@ -21,7 +21,7 @@ const Badge = () => {
             x: 720,
             y: 720,
             color: '#000000',
-            font: 'bold 55px Inter, sans-serif',
+            font: 'bold 55px "Product Sans", sans-serif',
         },
     };
 
@@ -363,7 +363,7 @@ const Badge = () => {
     }, [image, name, frameShape]);
 
     return (
-        <div className="min-h-screen font-product-regular bg-gray-50 pt-28 py-12 px-4 sm:px-6 lg:px-8 font-sans">
+        <div className="min-h-screen bg-white pt-28 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-12">
                     <h1 className="text-4xl font-product-black text-gray-900 sm:text-5xl mb-4">
@@ -373,22 +373,22 @@ const Badge = () => {
                         Personalize your experience! Upload your photo and enter your name to generate your official DevFest attendee badge.
                     </p>
                 </div>
-                <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                         <div className="p-8 lg:p-12 bg-gray-50 flex flex-col justify-center space-y-8">
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                                <label className="block text-sm font-product-semibold text-gray-700 mb-2">Your Name</label>
                                 <input
                                     type="text"
                                     value={name}
                                     onChange={e => setName(e.target.value)}
                                     placeholder="Enter your full name"
-                                    className="w-full font-medium px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors bg-white"
+                                    className="w-full font-product-regular px-4 py-3 rounded-xl border-2 border-gray-300 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all bg-white"
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Your Photo</label>
-                                <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg hover:border-blue-500 transition-colors bg-white cursor-pointer relative">
+                                <label className="block text-sm font-product-semibold text-gray-700 mb-2">Your Photo</label>
+                                <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-xl hover:border-blue-500 transition-colors bg-white cursor-pointer relative">
                                     <div className="space-y-1 text-center">
                                         {image ? (
                                             <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
@@ -398,28 +398,28 @@ const Badge = () => {
                                             <Upload className="mx-auto h-12 w-12 text-gray-400" />
                                         )}
                                         <div className="flex text-sm text-gray-600 justify-center">
-                                            <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none">
+                                            <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-product-semibold text-blue-600 hover:text-blue-500 focus-within:outline-none">
                                                 <span>Upload a file</span>
                                                 <input id="file-upload" name="file-upload" type="file" className="sr-only" accept="image/*" onChange={handleImageUpload} />
                                             </label>
                                             <p className="pl-1">or drag and drop</p>
                                         </div>
-                                        <p className="text-xs text-gray-500">PNG, JPG, JPEG up to 10MB</p>
+                                        <p className="text-xs text-gray-500 font-product-regular">PNG, JPG, JPEG up to 10MB</p>
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-3">Frame Shape</label>
+                                <label className="block text-sm font-product-semibold text-gray-700 mb-3">Frame Shape</label>
                                 <div className="grid grid-cols-5 gap-2">
                                     {FRAME_SHAPES.map(shape => (
                                         <button
                                             key={shape.id}
                                             onClick={() => setFrameShape(shape.id)}
-                                            className={`flex flex-col items-center justify-center p-3 cursor-pointer rounded-lg border-2 transition-all ${frameShape === shape.id ? 'border-blue-600 bg-blue-50 text-blue-600' : 'border-gray-300 hover:border-blue-400 bg-white'}`}
+                                            className={`flex flex-col items-center justify-center p-3 cursor-pointer rounded-xl border-2 transition-all ${frameShape === shape.id ? 'border-blue-600 bg-blue-50 text-blue-600' : 'border-gray-300 hover:border-blue-400 bg-white'}`}
                                             title={shape.name}
                                         >
                                             <span className="text-2xl mb-1">{shape.icon}</span>
-                                            <span className="text-xs font-medium text-center leading-tight">{shape.name}</span>
+                                            <span className="text-xs font-product-semibold text-center leading-tight">{shape.name}</span>
                                         </button>
                                     ))}
                                 </div>
@@ -428,17 +428,17 @@ const Badge = () => {
                                 <button
                                     onClick={downloadBadge}
                                     disabled={!generated}
-                                    className={`w-full flex items-center justify-center px-8 py-4 border border-transparent text-lg cursor-pointer font-medium rounded-xl text-white ${generated ? 'bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5' : 'bg-gray-400 cursor-not-allowed'} transition-all duration-200`}
+                                    className={`w-full flex items-center justify-center px-8 py-4 border border-transparent text-lg cursor-pointer font-product-bold rounded-xl text-white ${generated ? 'bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5' : 'bg-gray-400 cursor-not-allowed'} transition-all duration-200`}
                                 >
                                     <Download className="w-6 h-6 mr-2" />
                                     Download Badge
                                 </button>
                             </div>
                         </div>
-                        <div className="relative bg-gray-200 flex items-center justify-center p-8 lg:p-12 overflow-hidden">
+                        <div className="relative bg-gray-100 flex items-center justify-center p-8 lg:p-12 overflow-hidden">
                             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#4b5563_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                            <div className="relative shadow-2xl rounded-lg overflow-hidden max-w-full">
-                                <canvas ref={canvasRef} className="max-w-full h-auto block mx-auto rounded-lg" style={{ maxHeight: '600px' }} />
+                            <div className="relative shadow-2xl rounded-xl overflow-hidden max-w-full border border-gray-200">
+                                <canvas ref={canvasRef} className="max-w-full h-auto block mx-auto rounded-xl" style={{ maxHeight: '600px' }} />
                                 {!generated && loading && (
                                     <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80">
                                         <RefreshCw className="w-10 h-10 text-blue-600 animate-spin" />
@@ -449,7 +449,7 @@ const Badge = () => {
                     </div>
                 </div>
             </div>
-        </div>
+    );    </div>
     );
 };
 
