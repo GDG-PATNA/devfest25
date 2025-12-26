@@ -114,7 +114,7 @@ export const Certificate = () => {
     };
 
     return (
-        <div className="relative min-h-screen bg-slate-950 font-sans selection:bg-blue-500/30 text-white overflow-hidden">
+        <div className="relative min-h-screen bg-gray-50 font-sans selection:bg-blue-500/20 text-gray-900 overflow-hidden">
 
             {/* Background Decorative Blobs */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -124,66 +124,59 @@ export const Certificate = () => {
             </div>
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col justify-center min-h-screen">
-
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
                     {/* Left Side: Hero Text */}
-                    <div className="text-center lg:text-left space-y-8 animate-fade-in-up">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-full backdrop-blur-sm">
-                            <span className="relative flex h-3 w-3">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    <div className="text-center lg:text-left space-y-8">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-100 rounded-full">
+                            <span className="relative flex h-2.5 w-2.5 rounded-full bg-green-500"></span>
+                            <span className="text-sm font-medium text-blue-700">
+                                Official Downloads Live
                             </span>
-                            <span className="text-sm font-medium text-slate-300 tracking-wide">Official Downloads Live</span>
                         </div>
 
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1]">
+                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight text-gray-900">
                             Generate Your <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-red-400 to-yellow-400">
-                                DevFest Certificate
-                            </span>
+                            <span className="text-blue-600">DevFest Certificate</span>
                         </h1>
 
-                        <p className="text-lg text-slate-400 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                            Thank you for being part of the community. Enter your Booking ID below to generate, verify, and download your official participation credential.
+                        <p className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                            Thank you for being part of the community. Enter your Booking ID below to
+                            generate, verify, and download your official participation certificate.
                         </p>
                     </div>
 
-                    {/* Right Side: Glassmorphism Card */}
+                    {/* Right Side: Card */}
                     <div className="relative">
-                        {/* Card Glow Effect */}
-                        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur opacity-30 transition duration-1000 group-hover:opacity-100"></div>
-
-                        <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-2xl p-8 shadow-2xl">
+                        <div className="relative bg-white border border-gray-200 rounded-2xl p-8 shadow-xl">
 
                             {!result ? (
                                 /* --- SEARCH STATE --- */
                                 <form onSubmit={handleSearch} className="space-y-8">
                                     <div className="text-center space-y-2 mb-8">
-                                        <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 text-blue-400">
-                                            <Ticket className="w-8 h-8" />
+                                        <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4 text-blue-600">
+                                            <Ticket className="w-7 h-7" />
                                         </div>
-                                        <h2 className="text-2xl font-bold text-white">Retrieve Certificate</h2>
-                                        <p className="text-slate-400 text-sm">Enter the ID sent to your email</p>
+                                        <h2 className="text-2xl font-bold text-gray-900">
+                                            Retrieve Certificate
+                                        </h2>
+                                        <p className="text-gray-600 text-sm">
+                                            Enter the ID sent to your email
+                                        </p>
                                     </div>
 
                                     <div className="space-y-4">
-                                        <div className="relative group">
-                                            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                                <Search className="h-5 w-5 text-slate-500 group-focus-within:text-blue-400 transition-colors" />
-                                            </div>
-                                            <input
-                                                value={ticketId}
-                                                onChange={(e) => setTicketId(e.target.value)}
-                                                className="block w-full pl-11 pr-4 py-4 bg-slate-950 border border-slate-700 rounded-xl text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all"
-                                                placeholder="e.g. CERTIFICATE-ID-XXXX"
-                                                required
-                                            />
-                                        </div>
+                                        <input
+                                            value={ticketId}
+                                            onChange={(e) => setTicketId(e.target.value)}
+                                            className="block w-full px-4 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                                            placeholder="e.g. CERTIFICATE-ID-XXXX"
+                                            required
+                                        />
 
                                         <button
                                             disabled={loading}
-                                            className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold py-4 rounded-xl shadow-lg shadow-blue-500/20 transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2"
+                                            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 rounded-xl shadow-lg transition disabled:opacity-60 disabled:cursor-not-allowed flex justify-center items-center gap-2"
                                         >
                                             {loading ? (
                                                 <>
@@ -193,14 +186,14 @@ export const Certificate = () => {
                                             ) : (
                                                 <>
                                                     <span>Find Certificate</span>
-                                                    <Sparkles className="w-5 h-5" />
+                                                    <Search className="w-5 h-5" />
                                                 </>
                                             )}
                                         </button>
                                     </div>
 
                                     {error && (
-                                        <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-xl flex items-start gap-3 text-red-400 text-sm">
+                                        <div className="p-4 bg-red-50 border border-red-200 rounded-xl flex gap-3 text-red-600 text-sm">
                                             <AlertCircle className="w-5 h-5 flex-shrink-0" />
                                             <span>{error}</span>
                                         </div>
@@ -208,28 +201,34 @@ export const Certificate = () => {
                                 </form>
                             ) : (
                                 /* --- RESULT STATE --- */
-                                <div className="space-y-6 animate-in fade-in zoom-in duration-300">
-                                    <div className="flex items-center gap-3 text-green-400 bg-green-400/10 p-3 rounded-lg border border-green-400/20">
+                                <div className="space-y-6">
+                                    <div className="flex items-center gap-3 text-green-700 bg-green-50 p-3 rounded-lg border border-green-200">
                                         <CheckCircle2 className="w-5 h-5" />
-                                        <span className="font-medium">Certificate Generated Successfully</span>
+                                        <span className="font-medium">
+                                            Certificate Generated Successfully
+                                        </span>
                                     </div>
 
-                                    <div className="relative group rounded-lg overflow-hidden border border-slate-700 shadow-2xl">
-                                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all" />
-                                        <img src={result.url} alt="Generated Certificate" className="w-full object-cover" />
+                                    <div className="rounded-lg overflow-hidden border border-gray-200 shadow-lg">
+                                        <img
+                                            src={result.url}
+                                            alt="Generated Certificate"
+                                            className="w-full object-cover"
+                                        />
                                     </div>
 
                                     <div className="grid grid-cols-2 gap-3">
                                         <button
                                             onClick={() => setResult(null)}
-                                            className="px-4 py-3 rounded-xl bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition-colors"
+                                            className="px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition-colors"
                                         >
                                             Back
                                         </button>
+
                                         <a
                                             href={result.url}
                                             download={result.fileName}
-                                            className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-green-600 text-white font-medium hover:bg-green-500 shadow-lg shadow-green-900/20 transition-all hover:-translate-y-0.5"
+                                            className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 shadow-md transition"
                                         >
                                             <Download className="w-4 h-4" />
                                             Download
@@ -239,10 +238,13 @@ export const Certificate = () => {
                             )}
                         </div>
 
-                        {/* Footer underneath card */}
+                        {/* Footer */}
                         <div className="mt-6 text-center">
-                            <p className="text-xs text-slate-500">
-                                Issues with your ID? <a href="#" className="text-blue-400 hover:underline">Contact Support</a>
+                            <p className="text-xs text-gray-500">
+                                Issues with your ID?{" "}
+                                <a href="https://t.me/gdgpatna" className="text-blue-600 hover:underline">
+                                    Contact Support
+                                </a>
                             </p>
                         </div>
 
@@ -250,6 +252,7 @@ export const Certificate = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 
