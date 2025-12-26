@@ -21,10 +21,8 @@ const partners = [
 
 export default function Partners() {
   return (
-    <section className="bg-[#3A3A3A] py-16 text-white min-h-screen">
-      <div className="max-w-7xl mx-auto px-4">
-
-        {/* Heading */}
+    <div className="font-product-regular pt-28 px-4 sm:px-6 lg:px-8 font-sans bg-[#3A3A3A] py-16 text-white min-h-screen">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-semibold">
             Our <span className="font-bold text-[#f4e9d6]">Partners</span>
@@ -87,6 +85,6 @@ export default function Partners() {
         </div>
 
       </div>
-    </section>
+    </div>
   );
 }
