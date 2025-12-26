@@ -5,14 +5,12 @@ import {
     Download,
     AlertCircle,
     Loader2,
-    Sparkles,
     CheckCircle2,
-    Ticket
+    Ticket,
+    Linkedin // 1. Import Linkedin Icon
 } from 'lucide-react';
 
-const CSV_URL =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQEtNxmjg6OMu_iQNKcJ0-bw9K51k-HTmH_Be_5Vw_8pbvc0hqoKHpf1n8iWmxyeaYYRryZ_vquQryw/pub?gid=0&single=true&output=csv";
-
+const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQEtNxmjg6OMu_iQNKcJ0-bw9K51k-HTmH_Be_5Vw_8pbvc0hqoKHpf1n8iWmxyeaYYRryZ_vquQryw/pub?gid=0&single=true&output=csv"; // Add your CSV URL here
 const TEMPLATE_URL = '/certificate.png';
 
 /* ---------------- CONFIGURATION ---------------- */
@@ -22,6 +20,13 @@ const QR_CONFIG = {
     size: 200,
     color: '#000000',
     bgColor: '#ffffff00'
+};
+
+// 2. Configure LinkedIn Details
+const LINKEDIN_CONFIG = {
+    orgId: '43237565', // Optional: Replace with your Organization's LinkedIn ID (e.g., Google Developers ID)
+    certName: 'DevFest Attendee Certificate',
+    orgName: 'GDG Patna',
 };
 
 /* ---------------- UTIL ---------------- */
@@ -44,13 +49,14 @@ async function generateCertificate(name, ticketId) {
 
     const img = new Image();
     img.src = TEMPLATE_URL;
+    img.crossOrigin = "Anonymous"; // specific for handling images from external URLs if needed
     await new Promise(res => (img.onload = res));
 
     canvas.width = img.width;
     canvas.height = img.height;
     ctx.drawImage(img, 0, 0);
 
-    ctx.font = "700 55px Inter";
+    ctx.font = "700 55px Inter, sans-serif";
     ctx.fillStyle = "#5f6368";
     ctx.textAlign = "center";
     ctx.fillText(name, canvas.width / 2, 590);
@@ -104,6 +110,8 @@ export const Certificate = () => {
             setResult({
                 name: record.name,
                 url: imageUrl,
+                // 3. Store the ID explicitly for the LinkedIn button
+                ticketId: record.booking_id, 
                 fileName: `DevFest_Certificate_${record.name.replace(/\s+/g, '_')}.png`,
             });
         } catch (err) {
@@ -111,6 +119,31 @@ export const Certificate = () => {
         } finally {
             setLoading(false);
         }
+    };
+
+    // 4. LinkedIn Logic
+    const handleLinkedInClick = () => {
+        if (!result) return;
+        
+        const domain = window.location.origin;
+        const verificationUrl = `${domain}/certificate/${result.ticketId}`;
+        
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1; // JS months are 0-indexed
+
+        const params = new URLSearchParams({
+            startTask: 'CERTIFICATION_NAME',
+            name: LINKEDIN_CONFIG.certName,
+            organizationId: LINKEDIN_CONFIG.orgId,
+            organizationName: LINKEDIN_CONFIG.orgName,
+            issueYear: year.toString(),
+            issueMonth: month.toString(),
+            certId: result.ticketId,
+            certUrl: verificationUrl
+        });
+
+        window.open(`https://www.linkedin.com/profile/add?${params.toString()}`, '_blank');
     };
 
     return (
@@ -217,14 +250,10 @@ export const Certificate = () => {
                                         />
                                     </div>
 
-                                    <div className="grid grid-cols-2 gap-3">
-                                        <button
-                                            onClick={() => setResult(null)}
-                                            className="px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition-colors"
-                                        >
-                                            Back
-                                        </button>
-
+                                    {/* Buttons Grid */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        
+                                        {/* Download Button */}
                                         <a
                                             href={result.url}
                                             download={result.fileName}
@@ -233,6 +262,23 @@ export const Certificate = () => {
                                             <Download className="w-4 h-4" />
                                             Download
                                         </a>
+
+                                        {/* LinkedIn Button */}
+                                        <button
+                                            onClick={handleLinkedInClick}
+                                            className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 shadow-md transition"
+                                        >
+                                            <Linkedin className="w-4 h-4" />
+                                            Add to LinkedIn
+                                        </button>
+
+                                        {/* Back Button (Full width on mobile, spans 2 cols on desktop if needed, or keep simpler layout) */}
+                                        <button
+                                            onClick={() => setResult(null)}
+                                            className="col-span-1 sm:col-span-2 px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition-colors"
+                                        >
+                                            Back to Search
+                                        </button>
                                     </div>
                                 </div>
                             )}
@@ -252,7 +298,6 @@ export const Certificate = () => {
                 </div>
             </div>
         </div>
-
     );
 };
 
