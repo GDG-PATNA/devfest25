@@ -1,4 +1,5 @@
 // src/pages/Home.jsx
+import React from "react";
 import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import About from "../components/about/About";
