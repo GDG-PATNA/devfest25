@@ -7,11 +7,14 @@ import {
     Loader2,
     CheckCircle2,
     Ticket,
-    Linkedin // 1. Import Linkedin Icon
+    Linkedin
 } from 'lucide-react';
 
 const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQEtNxmjg6OMu_iQNKcJ0-bw9K51k-HTmH_Be_5Vw_8pbvc0hqoKHpf1n8iWmxyeaYYRryZ_vquQryw/pub?gid=0&single=true&output=csv"; // Add your CSV URL here
-const TEMPLATE_URL = '/certificate.png';
+
+// 1. Define both template URLs
+const ATTENDEE_TEMPLATE_URL = '/certificate.png';
+const VOLUNTEER_TEMPLATE_URL = '/volunteer-certificate.png'; // Ensure this file exists in your public folder
 
 /* ---------------- CONFIGURATION ---------------- */
 const QR_CONFIG = {
@@ -22,10 +25,9 @@ const QR_CONFIG = {
     bgColor: '#ffffff00'
 };
 
-// 2. Configure LinkedIn Details
 const LINKEDIN_CONFIG = {
-    orgId: '43237565', // Optional: Replace with your Organization's LinkedIn ID (e.g., Google Developers ID)
-    certName: 'DevFest Attendee Certificate',
+    orgId: '43237565',
+    certName: 'DevFest Certificate', // Generic name, or you can make this dynamic
     orgName: 'GDG Patna',
 };
 
@@ -43,43 +45,65 @@ function parseCSV(text) {
 }
 
 /* ---------------- CANVAS ---------------- */
-async function generateCertificate(name, ticketId) {
+// 2. Accept 'type' as an argument
+/* ---------------- CANVAS ---------------- */
+async function generateCertificate(name, ticketId, type) {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
 
+    // 1. Determine type
+    const recordType = type ? type.toLowerCase().trim() : 'attendee';
+    const isVolunteer = recordType === 'volunteer';
+
     const img = new Image();
-    img.src = TEMPLATE_URL;
-    img.crossOrigin = "Anonymous"; // specific for handling images from external URLs if needed
-    await new Promise(res => (img.onload = res));
+    // Select template based on type
+    img.src = isVolunteer ? VOLUNTEER_TEMPLATE_URL : ATTENDEE_TEMPLATE_URL;
+    img.crossOrigin = "Anonymous";
+
+    await new Promise((res, rej) => {
+        img.onload = res;
+        img.onerror = (e) => rej(new Error('Failed to load certificate template image'));
+    });
 
     canvas.width = img.width;
     canvas.height = img.height;
     ctx.drawImage(img, 0, 0);
 
+    // 2. Text Configuration
     ctx.font = "700 55px Inter, sans-serif";
     ctx.fillStyle = "#5f6368";
     ctx.textAlign = "center";
-    ctx.fillText(name, canvas.width / 2, 590);
 
-    try {
-        const domain = window.location.origin;
-        const verificationUrl = `${domain}/certificate/${ticketId}`;
-        const qrDataUrl = await QRCode.toDataURL(verificationUrl, {
-            margin: 1,
-            color: {
-                dark: QR_CONFIG.color,
-                light: QR_CONFIG.bgColor
-            }
-        });
+    // --- FIX START ---
+    // If Volunteer: Move text down to 900 (adjust this number if it's too low/high)
+    // If Attendee: Keep text at 590
+    const nameYPosition = isVolunteer ? 700 : 600;
 
-        const qrImg = new Image();
-        qrImg.src = qrDataUrl;
-        await new Promise(res => (qrImg.onload = res));
+    ctx.fillText(name, canvas.width / 2, nameYPosition);
+    // --- FIX END ---
 
-        ctx.drawImage(qrImg, QR_CONFIG.x, QR_CONFIG.y, QR_CONFIG.size, QR_CONFIG.size);
+    // 3. Only generate QR Code if NOT a volunteer
+    if (!isVolunteer) {
+        try {
+            const domain = window.location.origin;
+            const verificationUrl = `${domain}/certificate/${ticketId}`;
+            const qrDataUrl = await QRCode.toDataURL(verificationUrl, {
+                margin: 1,
+                color: {
+                    dark: QR_CONFIG.color,
+                    light: QR_CONFIG.bgColor
+                }
+            });
 
-    } catch (err) {
-        console.error("Error generating QR", err);
+            const qrImg = new Image();
+            qrImg.src = qrDataUrl;
+            await new Promise(res => (qrImg.onload = res));
+
+            ctx.drawImage(qrImg, QR_CONFIG.x, QR_CONFIG.y, QR_CONFIG.size, QR_CONFIG.size);
+
+        } catch (err) {
+            console.error("Error generating QR", err);
+        }
     }
 
     return canvas.toDataURL('image/png');
@@ -99,20 +123,29 @@ export const Certificate = () => {
 
         try {
             const res = await fetch(CSV_URL);
+            if (!res.ok) throw new Error('Failed to fetch CSV data');
+
             const text = await res.text();
             const records = parseCSV(text);
+
+            // Find record by booking_id
             const record = records.find(r => r.booking_id === ticketId.trim());
 
             if (!record) throw new Error('Certificate not found. Please check your Ticket ID.');
 
-            const imageUrl = await generateCertificate(record.name, record.booking_id);
+            // 5. Pass record.type to the generator
+            const imageUrl = await generateCertificate(
+                record.name,
+                record.booking_id,
+                record.type // Pass the type column here
+            );
 
             setResult({
                 name: record.name,
                 url: imageUrl,
-                // 3. Store the ID explicitly for the LinkedIn button
-                ticketId: record.booking_id, 
-                fileName: `DevFest_Certificate_${record.name.replace(/\s+/g, '_')}.png`,
+                ticketId: record.booking_id,
+                // Make filename descriptive
+                fileName: `DevFest_${record.type || 'Attendee'}_Certificate_${record.name.replace(/\s+/g, '_')}.png`,
             });
         } catch (err) {
             setError(err.message);
@@ -121,16 +154,15 @@ export const Certificate = () => {
         }
     };
 
-    // 4. LinkedIn Logic
     const handleLinkedInClick = () => {
         if (!result) return;
-        
+
         const domain = window.location.origin;
         const verificationUrl = `${domain}/certificate/${result.ticketId}`;
-        
+
         const date = new Date();
         const year = date.getFullYear();
-        const month = date.getMonth() + 1; // JS months are 0-indexed
+        const month = date.getMonth() + 1;
 
         const params = new URLSearchParams({
             startTask: 'CERTIFICATION_NAME',
@@ -252,7 +284,7 @@ export const Certificate = () => {
 
                                     {/* Buttons Grid */}
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                        
+
                                         {/* Download Button */}
                                         <a
                                             href={result.url}
@@ -272,7 +304,6 @@ export const Certificate = () => {
                                             Add to LinkedIn
                                         </button>
 
-                                        {/* Back Button (Full width on mobile, spans 2 cols on desktop if needed, or keep simpler layout) */}
                                         <button
                                             onClick={() => setResult(null)}
                                             className="col-span-1 sm:col-span-2 px-4 py-3 rounded-xl bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition-colors"
