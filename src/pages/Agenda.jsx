@@ -3,8 +3,6 @@
    ========================================================================= */
 import { Calendar, Clock, Users, Coffee, Mic, Sparkles, Award } from "lucide-react";
 import { Link } from "react-router-dom";
-import devfestLogo from "../assets/gdgDevfestLogo.svg";
-import noiseTexture from "../assets/noiseTexture.png";
 
 const agendaData = [
   {
@@ -130,17 +128,6 @@ export default function Agenda() {
       
       {/* Header Section */}
       <div className="relative z-10 pt-24 pb-8">
-        {/* Logo */}
-        <div className="flex justify-center mb-8">
-          <Link to="/" className="inline-block">
-            <img
-              src={devfestLogo}
-              alt="DevFest Patna 2025"
-              className="w-48 h-auto"
-            />
-          </Link>
-        </div>
-
         {/* Page Title */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-product-black text-gray-900 mb-4">
