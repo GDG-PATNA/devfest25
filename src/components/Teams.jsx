@@ -31,6 +31,7 @@ import TanyaJha from "../assets/team/TanyaJha.jpg";
 //import NigamKumar from "../assets/team/NigamKumar.jpg";
 import Keshvisri from "../assets/team/Keshvisri.jpg";
 import RiyaKumari from "../assets/team/RiyaKumari.jpg";
+import ritikSingh from "../assets/team/ritik-p.jpg";
 import RajkantKumar from "../assets/team/RajkantKumar.jpg";
 import AlokRaj from "../assets/team/AlokRaj.jpg";
 import SyedImran from "../assets/team/SyedImran.jpg";
@@ -485,6 +486,16 @@ const teamData = [
     bgi: "/images/team20.jpg",
     color: 1,
     linkedin: "https://www.linkedin.com/in/riya-kumari-19ab0836b/",
+    
+  },
+  {
+    id: 41,
+    img: ritikSingh,
+    name: "Ritik Singh",
+    role: "Social Media Management",
+    bgi: "/images/team20.jpg",
+    color: 1,
+    instagram: "https://www.instagram.com/ritik_n0tfound",
     
   }
 ];
